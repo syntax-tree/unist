@@ -48,3 +48,13 @@ files. Neither are they limited to the file-system only.
 
 ...are function which work with **unist nodes** or **unist files**, agnostic
 of either **mdast** or **retext**.
+
+A list of vile-related utilities can be found at [`wooorm/vfile`](https://github.com/wooorm/vfile).
+
+### Unist node utilties
+
+*   [`wooorm/unist-util-inspect`](https://github.com/wooorm/unist-util-inspect)
+    — Node inspector;
+
+*   [`wooorm/unist-util-visit`](https://github.com/wooorm/unist-util-visit)
+    — Utility to recursively walk over nodes;

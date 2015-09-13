@@ -53,8 +53,32 @@ A list of vile-related utilities can be found at [`wooorm/vfile`](https://github
 
 ### Unist node utilties
 
-*   [`wooorm/unist-util-inspect`](https://github.com/wooorm/unist-util-inspect)
+*   [`unist-util-find-after`](https://github.com/wooorm/unist-util-find-after)
+    — Find a node after another node;
+
+*   [`unist-util-find-all-after`](https://github.com/wooorm/unist-util-find-all-after)
+    — Find nodes after another node;
+
+*   [`unist-util-find-all-before`](https://github.com/wooorm/unist-util-find-all-before)
+    — Find nodes before another node;
+
+*   [`unist-util-find-before`](https://github.com/wooorm/unist-util-find-before)
+    — Find a node before another node;
+
+*   [`unist-util-inspect`](https://github.com/wooorm/unist-util-inspect)
     — Node inspector;
 
-*   [`wooorm/unist-util-visit`](https://github.com/wooorm/unist-util-visit)
-    — Utility to recursively walk over nodes;
+*   [`unist-util-is`](https://github.com/wooorm/unist-util-is)
+    — Check if a node passes a test
+
+*   [`unist-util-modify-children`](https://github.com/wooorm/unist-util-modify-children)
+    — Modify direct children of a parent;
+
+*   [`unist-util-select`](https://github.com/eush77/unist-util-select)
+    — Visit direct children of a parent;
+
+*   [`unist-util-visit`](https://github.com/wooorm/unist-util-visit)
+    — Recursively walk over nodes;
+
+*   [`unist-util-visit-children`](https://github.com/wooorm/unist-util-visit-children)
+    — Visit direct children of a parent;

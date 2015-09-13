@@ -19,7 +19,7 @@ This document explains some terminology relating to
 *   must have a `type` property set to a to its namespace semantic
     `string`;
 
-*   must have either a `value` property set to a `string` or a `children`
+*   may have either a `value` property set to a `string` or a `children`
     property set to an array of one or more `Unist` nodes;
 
 *   may have a `data` property set to a `JSON.stringify`able object;

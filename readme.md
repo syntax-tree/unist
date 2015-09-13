@@ -24,9 +24,6 @@ This document explains some terminology relating to
 
 *   may have a `data` property set to a `JSON.stringify`able object;
 
-*   may have an `attributes` property set to a an object of `String`ifyable
-    values;
-
 *   may have a `position` property set to a an object containing `start` and
     `end`, both of which contain an object with `line` and `column` set
     to an integer referencing their respective (1-based) line and column

@@ -1,12 +1,12 @@
 # ![Unist](https://cdn.rawgit.com/wooorm/unist/master/logo.svg)
 
-**Unist** (universal syntax tree) is the combination of two project, and more
+**Unist** (**uni**versal **s**yntax **t**ree) is the combination of three project, and more
 to come, which are the summation of at least [two](https://github.com/wooorm/retext/commit/8fcb1ff4874d1891791280d63125d27ed29b58a8)
 [years](https://github.com/wooorm/mdast/commit/19585b8) of my work and the
 current epitome of that.
 
 It’s basically a system for processing input: parsing it into a syntax tree,
-transformation by plug-ins, and compiling the syntax tree to something else.
+transforming it by plug-ins, and compiling the tree to something else.
 
 This document explains some terminology relating to
 [**retext**](https://github.com/wooorm/retext),
@@ -50,10 +50,10 @@ files. Neither are they limited to the file-system only.
 
 ## Unist utilities
 
-...are function which work with **unist nodes** or **unist files**, agnostic
-of either **mdast** or **retext**.
+**Unist utilities** are function which work with **unist nodes** or **unist files**, agnostic
+of **mdast**, **retext**, or **hast**.
 
-A list of vile-related utilities can be found at [`wooorm/vfile`](https://github.com/wooorm/vfile).
+A list of **VFile**-related utilities can be found at [**vfile**](https://github.com/wooorm/vfile).
 
 ### Unist node utilties
 

@@ -37,7 +37,7 @@ This document explains some terminology relating to
     must not have a `position`.
 
 See [**nlcst**](https://github.com/wooorm/nlcst) for more information
-on **retext** nodes, and [`mdast/doc/nodes.md`](https://github.com/wooorm/mdast/blob/master/doc/nodes.md)
+on **retext** nodes, and [`mdast/doc/mdastnode.7.md`](https://github.com/wooorm/mdast/blob/master/doc/mdastnode.7.md)
 for information on **mdast** nodes.
 
 ## Unist files

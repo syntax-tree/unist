@@ -76,6 +76,9 @@ A list of vile-related utilities can be found at [`wooorm/vfile`](https://github
 *   [`unist-util-modify-children`](https://github.com/wooorm/unist-util-modify-children)
     — Modify direct children of a parent;
 
+*   [`unist-util-parents`](https://github.com/eush77/unist-util-parents)
+    — `parent` references on nodes;
+
 *   [`unist-util-select`](https://github.com/eush77/unist-util-select)
     — Visit direct children of a parent;
 
@@ -84,3 +87,6 @@ A list of vile-related utilities can be found at [`wooorm/vfile`](https://github
 
 *   [`unist-util-visit-children`](https://github.com/wooorm/unist-util-visit-children)
     — Visit direct children of a parent;
+
+*   [`unist-builder`](https://github.com/eush77/unist-builder)
+    — Helper for creating trees.

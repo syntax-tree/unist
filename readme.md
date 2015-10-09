@@ -10,7 +10,8 @@ transformation by plug-ins, and compiling the syntax tree to something else.
 
 This document explains some terminology relating to
 [**retext**](https://github.com/wooorm/retext),
-[**mdast**](https://github.com/wooorm/mdast), and their related projects.
+[**mdast**](https://github.com/wooorm/mdast), [**hast**](https://github.com/wooorm/hast),
+and their related projects.
 
 ## Unist nodes
 
@@ -37,8 +38,9 @@ This document explains some terminology relating to
     must not have a `position`.
 
 See [**nlcst**](https://github.com/wooorm/nlcst) for more information
-on **retext** nodes, and [`mdast/doc/mdastnode.7.md`](https://github.com/wooorm/mdast/blob/master/doc/mdastnode.7.md)
-for information on **mdast** nodes.
+on **retext** nodes, [`mdast/doc/mdastnode.7.md`](https://github.com/wooorm/mdast/blob/master/doc/mdastnode.7.md)
+for information on **mdast** nodes, and [`hast#nodes`](https://github.com/wooorm/hast#nodes)
+for information on **hast** nodes.
 
 ## Unist files
 

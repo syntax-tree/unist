@@ -28,8 +28,13 @@ This document explains some terminology relating to
     `end`, both of which contain an object with `line` and `column` set
     to an integer referencing their respective (1-based) line and column
     in the input file. Both may have an `offset` property set to its
-    index from the beginning of the input. If a node represents something not
-    available in the original input, it must not have a `position`.
+    index from the beginning of the input.
+    The object at `position` may additionally have an `indent` property
+    set to an array of integers higher than 0 (not including), in which
+    case the node represents content which spans multiple lines prefixed
+    with content which is not part of the node.
+    If a node represents something not available in the original input, it
+    must not have a `position`.
 
 See [**nlcst**](https://github.com/wooorm/nlcst) for more information
 on **retext** nodes, and [`mdast/doc/nodes.md`](https://github.com/wooorm/mdast/blob/master/doc/nodes.md)

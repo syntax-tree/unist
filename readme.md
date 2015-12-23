@@ -82,7 +82,7 @@ A list of **VFile**-related utilities can be found at [**vfile**](https://github
     — `parent` references on nodes;
 
 *   [`unist-util-select`](https://github.com/eush77/unist-util-select)
-    — Visit direct children of a parent;
+    — Select nodes with CSS-like selectors;
 
 *   [`unist-util-visit`](https://github.com/wooorm/unist-util-visit)
     — Recursively walk over nodes;

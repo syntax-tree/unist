@@ -21,7 +21,7 @@ and their related projects.
     `string`;
 
 *   may have either a `value` property set to a `string` or a `children`
-    property set to an array of one or more `Unist` nodes;
+    property set to an array of zero or more `Unist` nodes;
 
 *   may have a `data` property set to a `JSON.stringify`able object;
 

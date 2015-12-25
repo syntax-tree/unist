@@ -1,7 +1,8 @@
 # ![Unist](https://cdn.rawgit.com/wooorm/unist/master/logo.svg)
 
-**Unist** (**uni**versal **s**yntax **t**ree) is the combination of three project, and more
-to come, which are the summation of at least [two](https://github.com/wooorm/retext/commit/8fcb1ff4874d1891791280d63125d27ed29b58a8)
+**Unist** (**uni**versal **s**yntax **t**ree) is the combination of three
+project, and more to come, which are the summation of at least
+[two](https://github.com/wooorm/retext/commit/8fcb1ff4874d1891791280d63125d27ed29b58a8)
 [years](https://github.com/wooorm/remark/commit/19585b8) of my work and the
 current epitome of that.
 
@@ -10,7 +11,8 @@ transforming it by plug-ins, and compiling the tree to something else.
 
 This document explains some terminology relating to
 [**retext**](https://github.com/wooorm/retext),
-[**remark**](https://github.com/wooorm/remark), [**hast**](https://github.com/wooorm/hast),
+[**remark**](https://github.com/wooorm/remark),
+[**hast**](https://github.com/wooorm/hast),
 and their related projects.
 
 ## Unist nodes
@@ -50,8 +52,8 @@ files. Neither are they limited to the file-system only.
 
 ## Unist utilities
 
-**Unist utilities** are function which work with **unist nodes** or **unist files**, agnostic
-of **remark**, **retext**, or **hast**.
+**Unist utilities** are function which work with **unist nodes** or **unist
+files**, agnostic of **remark**, **retext**, or **hast**.
 
 A list of **VFile**-related utilities can be found at [**vfile**](https://github.com/wooorm/vfile).
 

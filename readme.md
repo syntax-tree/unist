@@ -2,7 +2,7 @@
 
 **Unist** (**uni**versal **s**yntax **t**ree) is the combination of three project, and more
 to come, which are the summation of at least [two](https://github.com/wooorm/retext/commit/8fcb1ff4874d1891791280d63125d27ed29b58a8)
-[years](https://github.com/wooorm/mdast/commit/19585b8) of my work and the
+[years](https://github.com/wooorm/remark/commit/19585b8) of my work and the
 current epitome of that.
 
 It’s basically a system for processing input: parsing it into a syntax tree,
@@ -10,7 +10,7 @@ transforming it by plug-ins, and compiling the tree to something else.
 
 This document explains some terminology relating to
 [**retext**](https://github.com/wooorm/retext),
-[**mdast**](https://github.com/wooorm/mdast), [**hast**](https://github.com/wooorm/hast),
+[**remark**](https://github.com/wooorm/remark), [**hast**](https://github.com/wooorm/hast),
 and their related projects.
 
 ## Unist nodes
@@ -38,8 +38,8 @@ and their related projects.
     must not have a `position`.
 
 See [**nlcst**](https://github.com/wooorm/nlcst) for more information
-on **retext** nodes, [`mdast/doc/mdastnode.7.md`](https://github.com/wooorm/mdast/blob/master/doc/mdastnode.7.md)
-for information on **mdast** nodes, and [`hast#nodes`](https://github.com/wooorm/hast#nodes)
+on **retext** nodes, [**mdast**](https://github.com/wooorm/mdast)
+for information on **remark** nodes, and [`hast#nodes`](https://github.com/wooorm/hast#nodes)
 for information on **hast** nodes.
 
 ## Unist files
@@ -51,7 +51,7 @@ files. Neither are they limited to the file-system only.
 ## Unist utilities
 
 **Unist utilities** are function which work with **unist nodes** or **unist files**, agnostic
-of **mdast**, **retext**, or **hast**.
+of **remark**, **retext**, or **hast**.
 
 A list of **VFile**-related utilities can be found at [**vfile**](https://github.com/wooorm/vfile).
 

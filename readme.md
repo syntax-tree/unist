@@ -59,6 +59,10 @@ A list of **VFile**-related utilities can be found at [**vfile**](https://github
 
 ### Unist node utilties
 
+*   [`unist-util-filter`](https://github.com/eush77/unist-util-filter)
+    — Create a new Unist tree with all nodes that pass the test
+    implemented by the provided function;
+
 *   [`unist-util-find-after`](https://github.com/wooorm/unist-util-find-after)
     — Find a node after another node;
 

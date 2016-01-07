@@ -87,6 +87,9 @@ A list of **VFile**-related utilities can be found at [**vfile**](https://github
 *   [`unist-util-parents`](https://github.com/eush77/unist-util-parents)
     — `parent` references on nodes;
 
+*   [`unist-util-remove`](https://github.com/eush77/unist-util-remove)
+    — Remove nodes from Unist trees;
+
 *   [`unist-util-select`](https://github.com/eush77/unist-util-select)
     — Select nodes with CSS-like selectors;
 

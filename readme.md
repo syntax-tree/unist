@@ -1,19 +1,15 @@
-# ![Unist](https://cdn.rawgit.com/wooorm/unist/master/logo.svg)
+# ![Unist][logo]
 
 **Unist** (**uni**versal **s**yntax **t**ree) is the combination of three
 project, and more to come, which are the summation of at least
-[two](https://github.com/wooorm/retext/commit/8fcb1ff4874d1891791280d63125d27ed29b58a8)
-[years](https://github.com/wooorm/remark/commit/19585b8) of my work and the
+[two][first-retext-commit] [years][first-remark-commit] of my work and the
 current epitome of that.
 
 It’s basically a system for processing input: parsing it into a syntax tree,
 transforming it by plug-ins, and compiling the tree to something else.
 
-This document explains some terminology relating to
-[**retext**](https://github.com/wooorm/retext),
-[**remark**](https://github.com/wooorm/remark),
-[**hast**](https://github.com/wooorm/hast),
-and their related projects.
+This document explains some terminology relating to [**retext**][retext],
+[**remark**][remark], [**hast**][hast], and their related projects.
 
 ## Unist nodes
 
@@ -30,7 +26,7 @@ and their related projects.
 *   may have a `position` property set to a an object containing `start` and
     `end`, both of which contain an object with `line` and `column` set
     to an integer referencing their respective (1-based) line and column
-    in the input file. Both may have an `offset` property set to its
+    in the input file.  Both may have an `offset` property set to its
     index from the beginning of the input.
     The object at `position` may additionally have an `indent` property
     set to an array of integers higher than 0 (not including), in which
@@ -39,23 +35,22 @@ and their related projects.
     If a node represents something not available in the original input, it
     must not have a `position`.
 
-See [**nlcst**](https://github.com/wooorm/nlcst) for more information
-on **retext** nodes, [**mdast**](https://github.com/wooorm/mdast)
-for information on **remark** nodes, and [`hast#nodes`](https://github.com/wooorm/hast#nodes)
-for information on **hast** nodes.
+See [**nlcst**][nlcst] for more information on **retext** nodes,
+[**mdast**][mdast] for information on **remark** nodes, and
+[`hast#nodes`][hast-nodes] for information on **hast** nodes.
 
 ## Unist files
 
-**Unist files** are virtual files (such as [**vfile**](https://github.com/wooorm/vfile))
-representing content at a certain location. They are not limited to existing
-files. Neither are they limited to the file-system only.
+**Unist files** are virtual files (such as [**vfile**][vfile])
+representing content at a certain location.  They are not limited to
+existing files.  Neither are they limited to the file-system only.
 
 ## Unist utilities
 
 **Unist utilities** are function which work with **unist nodes** or **unist
 files**, agnostic of **remark**, **retext**, or **hast**.
 
-A list of **VFile**-related utilities can be found at [**vfile**](https://github.com/wooorm/vfile).
+A list of **VFile**-related utilities can be found at [**vfile**][vfile].
 
 ### Unist node utilties
 
@@ -101,3 +96,25 @@ A list of **VFile**-related utilities can be found at [**vfile**](https://github
 
 *   [`unist-builder`](https://github.com/eush77/unist-builder)
     — Helper for creating trees.
+
+<!-- Definitions -->
+
+[logo]: https://cdn.rawgit.com/wooorm/unist/master/logo.svg
+
+[first-retext-commit]: https://github.com/wooorm/retext/commit/8fcb1ff
+
+[first-remark-commit]: https://github.com/wooorm/remark/commit/19585b8
+
+[retext]: https://github.com/wooorm/retext
+
+[remark]: https://github.com/wooorm/remark
+
+[hast]: https://github.com/wooorm/hast
+
+[nlcst]: https://github.com/wooorm/nlcst
+
+[mdast]: https://github.com/wooorm/mdast
+
+[hast-nodes]: https://github.com/wooorm/hast#nodes
+
+[vfile]: https://github.com/wooorm/vfile

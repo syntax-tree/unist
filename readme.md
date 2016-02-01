@@ -1,9 +1,12 @@
 # ![Unist][logo]
 
-**Unist** (**uni**versal **s**yntax **t**ree) is the combination of three
-project, and more to come, which are the summation of at least
-[two][first-retext-commit] [years][first-remark-commit] of my work and the
-current epitome of that.
+**Uni**versal **S**yntax **T**ree.
+
+***
+
+**Unist** is the combination of three project, and more to come, which
+are the summation of at least [two][first-retext-commit]
+[years][first-remark-commit] of my work and the current epitome of that.
 
 It’s basically a system for processing input: parsing it into a syntax tree,
 transforming it by plug-ins, and compiling the tree to something else.
@@ -13,31 +16,85 @@ This document explains some terminology relating to [**retext**][retext],
 
 ## Unist nodes
 
-**Unist nodes**:
-
-*   must have a `type` property set to a to its namespace semantic
-    `string`;
-
-*   may have either a `value` property set to a `string` or a `children`
-    property set to an array of zero or more `Unist` nodes;
-
-*   may have a `data` property set to a `JSON.stringify`able object;
-
-*   may have a `position` property set to a an object containing `start` and
-    `end`, both of which contain an object with `line` and `column` set
-    to an integer referencing their respective (1-based) line and column
-    in the input file.  Both may have an `offset` property set to its
-    index from the beginning of the input.
-    The object at `position` may additionally have an `indent` property
-    set to an array of integers higher than 0 (not including), in which
-    case the node represents content which spans multiple lines prefixed
-    with content which is not part of the node.
-    If a node represents something not available in the original input, it
-    must not have a `position`.
-
 See [**nlcst**][nlcst] for more information on **retext** nodes,
 [**mdast**][mdast] for information on **remark** nodes, and
 [`hast#nodes`][hast-nodes] for information on **hast** nodes.
+
+### `Node`
+
+Node represents any unit in the Unist hierarchy.  It is an abstract
+class.  Interfaces inheriting from **Node** must have a `type` property,
+and may have `data` or `location` properties. `type`s are defined by
+their namespace.
+
+```idl
+interface Node {
+  type: string;
+  data: Data?;
+  position: Location?;
+}
+```
+
+#### `Data`
+
+Data represents data associated with any node.  Data is a scope for plug-ins
+to store any information.  Its only limitation being that each property should
+by `stringify`able: not throw when passed to `JSON.stringify()`.
+
+```idl
+interface Data { }
+```
+
+#### `Location`
+
+**Location** references a location of a node in a **Unist** file.
+If a location is not applicable, the location must be omitted.
+**Location** consists of a `start` and end `position`. And, if
+relevant, an `indent` property.
+
+```idl
+interface Location {
+  start: Position;
+  end: Position;
+  indent: [uint32 >= 1]?;
+}
+```
+
+#### `Position`
+
+**Position** contains `line` and `column` set to a (1-based) integer
+referencing a position in a **Unist** file.  An `offset` (0-based)
+may be used.
+
+```idl
+interface Position {
+  line: uint32 >= 1;
+  column: uint32 >= 1;
+  offset: uint32 >= 0?;
+}
+```
+
+### `Parent`
+
+Nodes containing child nodes inherit the **Parent** ([**Node**](#node))
+abstract interface.
+
+```idl
+interface Parent <: Node {
+    children: [Node];
+}
+```
+
+### `Text`
+
+Nodes containing a value inherit the **Text** ([**Node**](#node))
+abstract interface.
+
+```idl
+interface Text <: Node {
+    value: string;
+}
+```
 
 ## Unist files
 

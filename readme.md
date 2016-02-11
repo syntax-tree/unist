@@ -20,12 +20,25 @@ See [**nlcst**][nlcst] for more information on **retext** nodes,
 [**mdast**][mdast] for information on **remark** nodes, and
 [`hast#nodes`][hast-nodes] for information on **hast** nodes.
 
+Subsets of Unist can define new properties on new nodes, and plug-ins
+and utilities can define new [`data`][data] properties on nodes.  But,
+the values on those properties **must** be JSON values: `string`,
+`number`, `object`, `array`, `true`, `false`, or `null`.  This means
+that the syntax tree should be able to be converted to and from JSON
+and produce the same tree.  For example, in JavaScript, a tree should
+be able to be passed through `JSON.parse(JSON.stringify(tree))` and
+result in the same values.
+
 ### `Node`
 
 Node represents any unit in the Unist hierarchy.  It is an abstract
 class.  Interfaces inheriting from **Node** must have a `type` property,
 and may have `data` or `location` properties. `type`s are defined by
 their namespace.
+
+Subsets of Unist are allowed to define properties on interfaces which
+subclass Unist’s abstract interfaces.  For example, [mdast][] defines
+a `link` node (subclassing [Parent][]) with a `url` property.
 
 ```idl
 interface Node {
@@ -37,9 +50,10 @@ interface Node {
 
 #### `Data`
 
-Data represents data associated with any node.  Data is a scope for plug-ins
-to store any information.  Its only limitation being that each property should
-by `stringify`able: not throw when passed to `JSON.stringify()`.
+Data represents data associated with any node.  `Data` is a scope for
+plug-ins to store any information.  For example, [`remark-html`][remark-html]
+uses `htmlAttributes` to let other plug-ins specify attributes added
+to the compiled HTML element.
 
 ```idl
 interface Data { }
@@ -175,3 +189,9 @@ A list of **VFile**-related utilities can be found at [**vfile**][vfile].
 [hast-nodes]: https://github.com/wooorm/hast#nodes
 
 [vfile]: https://github.com/wooorm/vfile
+
+[remark-html]: https://github.com/wooorm/remark-html
+
+[parent]: #parent
+
+[data]: #data

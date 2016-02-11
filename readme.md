@@ -14,6 +14,9 @@ transforming it by plug-ins, and compiling the tree to something else.
 This document explains some terminology relating to [**retext**][retext],
 [**remark**][remark], [**hast**][hast], and their related projects.
 
+This document describes version 1.0.0 of Unist.
+[Changelog »][changelog].
+
 ## Unist nodes
 
 See [**nlcst**][nlcst] for more information on **retext** nodes,
@@ -171,6 +174,8 @@ A list of **VFile**-related utilities can be found at [**vfile**][vfile].
 <!-- Definitions -->
 
 [logo]: https://cdn.rawgit.com/wooorm/unist/master/logo.svg
+
+[changelog]: https://github.com/wooorm/unist/releases
 
 [first-retext-commit]: https://github.com/wooorm/retext/commit/8fcb1ff
 

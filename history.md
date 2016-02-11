@@ -1,5 +1,2 @@
-*   Add IDL descriptions of abstract definitions ([`913b1bd`](https://github.com/wooorm/unist/commit/913b1bd))
-*   Fix disallowed empty `children` array ([`a6d3a03`](https://github.com/wooorm/unist/commit/a6d3a03))
-*   Add description of `indent` on `node.position` ([`60da1d2`](https://github.com/wooorm/unist/commit/60da1d2))
-*   Remove `attributes` support on nodes ([`3aea64f`](https://github.com/wooorm/unist/commit/3aea64f))
-*   Fix to make `value` / `children` optional ([`b7c4317`](https://github.com/wooorm/unist/commit/b7c4317))
+1.0.0 / 2016-02-11
+==================

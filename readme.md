@@ -159,6 +159,9 @@ A list of **VFile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-util-remove`](https://github.com/eush77/unist-util-remove)
     — Remove nodes from Unist trees;
 
+*   [`unist-util-remove-position`](https://github.com/wooorm/unist-util-remove-position)
+    — Remove `position`s from a unist tree;
+
 *   [`unist-util-select`](https://github.com/eush77/unist-util-select)
     — Select nodes with CSS-like selectors;
 

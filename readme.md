@@ -65,9 +65,12 @@ interface Data { }
 #### `Location`
 
 **Location** references a location of a node in a **Unist** file.
-If a location is not applicable, the location must be omitted.
-**Location** consists of a `start` and end `position`. And, if
+**Location** consists of a `start` and `end` position. And, if
 relevant, an `indent` property.
+
+When the value represented by a node is not present in the document
+corresponding to the syntax tree, it must not have a location. These
+nodes are said to be _generated_.
 
 ```idl
 interface Location {

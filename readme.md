@@ -124,12 +124,12 @@ existing files.  Neither are they limited to the file-system only.
 
 ## Unist utilities
 
-**Unist utilities** are function which work with **unist nodes** or **unist
-files**, agnostic of **remark**, **retext**, or **hast**.
+**Unist utilities** are function which work with **unist nodes**,
+agnostic of **remark**, **retext**, or **hast**.
 
 A list of **VFile**-related utilities can be found at [**vfile**][vfile].
 
-### Unist node utilties
+### List of Utilties
 
 *   [`unist-util-filter`](https://github.com/eush77/unist-util-filter)
     — Create a new Unist tree with all nodes that pass the test

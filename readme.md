@@ -171,6 +171,9 @@ A list of **VFile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-util-select`](https://github.com/eush77/unist-util-select)
     — Select nodes with CSS-like selectors;
 
+*   [`unist-util-stringify-position`](https://github.com/wooorm/unist-util-stringify-position)
+    — Stringify a node, location, or position;
+
 *   [`unist-util-visit`](https://github.com/wooorm/unist-util-visit)
     — Recursively walk over nodes;
 

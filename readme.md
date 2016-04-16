@@ -147,6 +147,9 @@ A list of **VFile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-util-find-before`](https://github.com/wooorm/unist-util-find-before)
     — Find a node before another node;
 
+*   [`unist-util-generated`](https://github.com/wooorm/unist-util-generated)
+    — Check if a node is generated;
+
 *   [`unist-util-index`](https://github.com/eush77/unist-util-index)
     — Index nodes by property or computed key;
 

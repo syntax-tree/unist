@@ -8,20 +8,17 @@
 are the summation of at least [two][first-retext-commit]
 [years][first-remark-commit] of my work and the current epitome of that.
 
-It’s basically a system for processing input: parsing it into a syntax tree,
-transforming it by plug-ins, and compiling the tree to something else.
+It’s a system for processing input: parsing it into a syntax tree,
+transforming it through plug-ins, and compiling the tree to something
+else.
 
 This document explains some terminology relating to [**retext**][retext],
 [**remark**][remark], [**hast**][hast], and their related projects.
 
-This document describes version 1.0.0 of Unist.
-[Changelog »][changelog].
+This document may not be released. See [releases][] for released
+documents.
 
 ## Unist nodes
-
-See [**nlcst**][nlcst] for more information on **retext** nodes,
-[**mdast**][mdast] for information on **remark** nodes, and
-[`hast#nodes`][hast-nodes] for information on **hast** nodes.
 
 Subsets of Unist can define new properties on new nodes, and plug-ins
 and utilities can define new [`data`][data] properties on nodes.  But,
@@ -32,16 +29,20 @@ and produce the same tree.  For example, in JavaScript, a tree should
 be able to be passed through `JSON.parse(JSON.stringify(tree))` and
 result in the same values.
 
+See [**nlcst**][nlcst] for more information on **retext** nodes,
+[**mdast**][mdast] for information on **remark** nodes, and
+[**hast**][hast] for information on **hast** nodes.
+
 ### `Node`
 
-Node represents any unit in the Unist hierarchy.  It is an abstract
-class.  Interfaces inheriting from **Node** must have a `type` property,
-and may have `data` or `location` properties. `type`s are defined by
+A Node represents any unit in the Unist hierarchy.  It is an abstract
+interface.  Interfaces extending **Node** must have a `type` property,
+and may have `data` or `location` properties.  `type`s are defined by
 their namespace.
 
 Subsets of Unist are allowed to define properties on interfaces which
-subclass Unist’s abstract interfaces.  For example, [mdast][] defines
-a `link` node (subclassing [Parent][]) with a `url` property.
+extend Unist’s abstract interfaces.  For example, [mdast][] defines
+**Link** ([Parent][]) with a `url` property.
 
 ```idl
 interface Node {
@@ -64,13 +65,13 @@ interface Data { }
 
 #### `Location`
 
-**Location** references a location of a node in a **Unist** file.
-**Location** consists of a `start` and `end` position. And, if
-relevant, an `indent` property.
+**Location** references a range consisting of two points in a [Unist
+file][file].  **Location** consists of a `start` and `end` position.
+And, if relevant, an `indent` property.
 
 When the value represented by a node is not present in the document
-corresponding to the syntax tree, it must not have a location. These
-nodes are said to be _generated_.
+corresponding to the syntax tree at the time of reading, it must not
+have a location.  These nodes are said to be _generated_.
 
 ```idl
 interface Location {
@@ -82,9 +83,9 @@ interface Location {
 
 #### `Position`
 
-**Position** contains `line` and `column` set to a (1-based) integer
-referencing a position in a **Unist** file.  An `offset` (0-based)
-may be used.
+**Position** references a point consisting of two indices in a
+[Unist file][file]: `line` and `column`, set to 1-based integers.  An
+`offset` (0-based) may be used.
 
 ```idl
 interface Position {
@@ -96,8 +97,8 @@ interface Position {
 
 ### `Parent`
 
-Nodes containing child nodes inherit the **Parent** ([**Node**](#node))
-abstract interface.
+Nodes containing other nodes (said to be **children**) extend the
+abstract interface **Parent** ([**Node**](#node)).
 
 ```idl
 interface Parent <: Node {
@@ -107,8 +108,8 @@ interface Parent <: Node {
 
 ### `Text`
 
-Nodes containing a value inherit the **Text** ([**Node**](#node))
-abstract interface.
+Nodes containing a value extend the abstract interface **Text**
+([**Node**](#node)).
 
 ```idl
 interface Text <: Node {
@@ -119,17 +120,17 @@ interface Text <: Node {
 ## Unist files
 
 **Unist files** are virtual files (such as [**vfile**][vfile])
-representing content at a certain location.  They are not limited to
-existing files.  Neither are they limited to the file-system only.
+representing documents at a certain location.  They are not limited to
+existing files, nor to the file-system.
 
 ## Unist utilities
 
-**Unist utilities** are function which work with **unist nodes**,
+**Unist utilities** are functions which work with **unist nodes**,
 agnostic of **remark**, **retext**, or **hast**.
 
-A list of **VFile**-related utilities can be found at [**vfile**][vfile].
+A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
-### List of Utilties
+### List of Utilities
 
 *   [`unist-util-filter`](https://github.com/eush77/unist-util-filter)
     — Create a new Unist tree with all nodes that pass the test
@@ -190,7 +191,7 @@ A list of **VFile**-related utilities can be found at [**vfile**][vfile].
 
 [logo]: https://cdn.rawgit.com/wooorm/unist/master/logo.svg
 
-[changelog]: https://github.com/wooorm/unist/releases
+[releases]: https://github.com/wooorm/unist/releases
 
 [first-retext-commit]: https://github.com/wooorm/retext/commit/8fcb1ff
 
@@ -206,8 +207,6 @@ A list of **VFile**-related utilities can be found at [**vfile**][vfile].
 
 [mdast]: https://github.com/wooorm/mdast
 
-[hast-nodes]: https://github.com/wooorm/hast#nodes
-
 [vfile]: https://github.com/wooorm/vfile
 
 [remark-html]: https://github.com/wooorm/remark-html
@@ -215,3 +214,5 @@ A list of **VFile**-related utilities can be found at [**vfile**][vfile].
 [parent]: #parent
 
 [data]: #data
+
+[file]: #unist-files

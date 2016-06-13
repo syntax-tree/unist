@@ -166,6 +166,9 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-util-parents`](https://github.com/eush77/unist-util-parents)
     — `parent` references on nodes;
 
+*   [`unist-util-position`](https://github.com/wooorm/unist-util-position)
+    — Get the position of nodes;
+
 *   [`unist-util-remove`](https://github.com/eush77/unist-util-remove)
     — Remove nodes from Unist trees;
 

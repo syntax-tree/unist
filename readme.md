@@ -18,6 +18,16 @@ This document explains some terminology relating to [**retext**][retext],
 This document may not be released. See [releases][] for released
 documents.
 
+## Table of Contents
+
+*   [Unist nodes](#unist-nodes)
+    *   [Node](#node)
+    *   [Parent](#parent)
+    *   [Text](#text)
+*   [Unist files](#unist-files)
+*   [Unist utilities](#unist-utilities)
+    *   [List of Utilities](#list-of-utilities)
+
 ## Unist nodes
 
 Subsets of Unist can define new properties on new nodes, and plug-ins

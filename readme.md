@@ -183,6 +183,8 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
     — Stringify a node, location, or position;
 *   [`unist-util-visit`](https://github.com/wooorm/unist-util-visit)
     — Recursively walk over nodes;
+*   [`unist-util-visit-parents`](https://github.com/wooorm/unist-util-visit-parents)
+    — Recursively walk over nodes, with a stack of parents;
 *   [`unist-util-visit-children`](https://github.com/wooorm/unist-util-visit-children)
     — Visit direct children of a parent;
 *   [`unist-builder`](https://github.com/eush77/unist-builder)

@@ -165,6 +165,8 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
     — Node inspector;
 *   [`unist-util-is`](https://github.com/wooorm/unist-util-is)
     — Check if a node passes a test
+*   [`unist-util-map`](https://github.com/azu/unist-util-map)
+    — Create a new tree by mapping nodes;
 *   [`unist-util-modify-children`](https://github.com/wooorm/unist-util-modify-children)
     — Modify direct children of a parent;
 *   [`unist-util-parents`](https://github.com/eush77/unist-util-parents)

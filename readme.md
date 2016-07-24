@@ -142,6 +142,8 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
 ### List of Utilities
 
+*   [`unist-util-assert`](https://github.com/wooorm/unist-util-assert)
+    — Assert Unist nodes;
 *   [`unist-util-filter`](https://github.com/eush77/unist-util-filter)
     — Create a new Unist tree with all nodes that pass the test
     implemented by the provided function;

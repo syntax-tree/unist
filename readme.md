@@ -112,7 +112,7 @@ abstract interface **Parent** ([**Node**](#node)).
 
 ```idl
 interface Parent <: Node {
-    children: [Node];
+  children: [Node];
 }
 ```
 
@@ -123,7 +123,7 @@ Nodes containing a value extend the abstract interface **Text**
 
 ```idl
 interface Text <: Node {
-    value: string;
+  value: string;
 }
 ```
 
@@ -145,58 +145,40 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-util-filter`](https://github.com/eush77/unist-util-filter)
     — Create a new Unist tree with all nodes that pass the test
     implemented by the provided function;
-
 *   [`unist-util-find-after`](https://github.com/wooorm/unist-util-find-after)
     — Find a node after another node;
-
 *   [`unist-util-find-all-after`](https://github.com/wooorm/unist-util-find-all-after)
     — Find nodes after another node;
-
 *   [`unist-util-find-all-before`](https://github.com/wooorm/unist-util-find-all-before)
     — Find nodes before another node;
-
 *   [`unist-util-find-before`](https://github.com/wooorm/unist-util-find-before)
     — Find a node before another node;
-
 *   [`unist-util-generated`](https://github.com/wooorm/unist-util-generated)
     — Check if a node is generated;
-
 *   [`unist-util-index`](https://github.com/eush77/unist-util-index)
     — Index nodes by property or computed key;
-
 *   [`unist-util-inspect`](https://github.com/wooorm/unist-util-inspect)
     — Node inspector;
-
 *   [`unist-util-is`](https://github.com/wooorm/unist-util-is)
     — Check if a node passes a test
-
 *   [`unist-util-modify-children`](https://github.com/wooorm/unist-util-modify-children)
     — Modify direct children of a parent;
-
 *   [`unist-util-parents`](https://github.com/eush77/unist-util-parents)
     — `parent` references on nodes;
-
 *   [`unist-util-position`](https://github.com/wooorm/unist-util-position)
     — Get the position of nodes;
-
 *   [`unist-util-remove`](https://github.com/eush77/unist-util-remove)
     — Remove nodes from Unist trees;
-
 *   [`unist-util-remove-position`](https://github.com/wooorm/unist-util-remove-position)
     — Remove `position`s from a unist tree;
-
 *   [`unist-util-select`](https://github.com/eush77/unist-util-select)
     — Select nodes with CSS-like selectors;
-
 *   [`unist-util-stringify-position`](https://github.com/wooorm/unist-util-stringify-position)
     — Stringify a node, location, or position;
-
 *   [`unist-util-visit`](https://github.com/wooorm/unist-util-visit)
     — Recursively walk over nodes;
-
 *   [`unist-util-visit-children`](https://github.com/wooorm/unist-util-visit-children)
     — Visit direct children of a parent;
-
 *   [`unist-builder`](https://github.com/eush77/unist-builder)
     — Helper for creating trees.
 

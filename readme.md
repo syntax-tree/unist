@@ -145,8 +145,7 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-util-assert`](https://github.com/wooorm/unist-util-assert)
     — Assert Unist nodes;
 *   [`unist-util-filter`](https://github.com/eush77/unist-util-filter)
-    — Create a new Unist tree with all nodes that pass the test
-    implemented by the provided function;
+    — Create a new tree with all nodes that pass the given function;
 *   [`unist-util-find`](https://github.com/blahah/unist-util-find)
     — Find a node by condition;
 *   [`unist-util-find-after`](https://github.com/wooorm/unist-util-find-after)

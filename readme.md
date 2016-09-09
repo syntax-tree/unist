@@ -191,7 +191,7 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
 <!-- Definitions -->
 
-[logo]: https://cdn.rawgit.com/wooorm/unist/master/logo.svg
+[logo]: https://cdn.rawgit.com/wooorm/unist/76af1b6/logo.svg
 
 [releases]: https://github.com/wooorm/unist/releases
 

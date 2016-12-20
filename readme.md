@@ -197,9 +197,9 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
 [releases]: https://github.com/syntax-tree/unist/releases
 
-[first-retext-commit]: https://github.com/syntax-tree/retext/commit/8fcb1ff
+[first-retext-commit]: https://github.com/wooorm/retext/commit/8fcb1ff
 
-[first-remark-commit]: https://github.com/syntax-tree/remark/commit/19585b8
+[first-remark-commit]: https://github.com/wooorm/remark/commit/19585b8
 
 [retext]: https://github.com/wooorm/retext
 
@@ -213,7 +213,7 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
 [mdast]: https://github.com/syntax-tree/mdast
 
-[vfile]: https://github.com/syntax-tree/vfile
+[vfile]: https://github.com/vfile/vfile
 
 [remark-html]: https://github.com/wooorm/remark-html
 

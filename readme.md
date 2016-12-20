@@ -13,7 +13,7 @@ transforming it through plug-ins, and compiling the tree to something
 else.
 
 This document explains some terminology relating to [**retext**][retext],
-[**remark**][remark], [**hast**][hast], and their related projects.
+[**remark**][remark], [**rehype**][rehype], and their related projects.
 
 This document may not be released. See [releases][] for released
 documents.
@@ -41,7 +41,7 @@ result in the same values.
 
 See [**nlcst**][nlcst] for more information on **retext** nodes,
 [**mdast**][mdast] for information on **remark** nodes, and
-[**hast**][hast] for information on **hast** nodes.
+[**hast**][hast] for information on **rehype** nodes.
 
 ### `Node`
 
@@ -136,7 +136,7 @@ existing files, nor to the file-system.
 ## Unist utilities
 
 **Unist utilities** are functions which work with **unist nodes**,
-agnostic of **remark**, **retext**, or **hast**.
+agnostic of **remark**, **retext**, or **rehype**.
 
 A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
@@ -205,7 +205,9 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
 [remark]: https://github.com/wooorm/remark
 
-[hast]: https://github.com/wooorm/hast
+[rehype]: https://github.com/wooorm/rehype
+
+[hast]: https://github.com/syntax-tree/hast
 
 [nlcst]: https://github.com/syntax-tree/nlcst
 

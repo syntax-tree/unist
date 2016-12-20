@@ -142,64 +142,64 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
 ### List of Utilities
 
-*   [`unist-util-assert`](https://github.com/wooorm/unist-util-assert)
+*   [`unist-util-assert`](https://github.com/syntax-tree/unist-util-assert)
     — Assert Unist nodes;
 *   [`unist-util-filter`](https://github.com/eush77/unist-util-filter)
     — Create a new tree with all nodes that pass the given function;
 *   [`unist-util-find`](https://github.com/blahah/unist-util-find)
     — Find a node by condition;
-*   [`unist-util-find-after`](https://github.com/wooorm/unist-util-find-after)
+*   [`unist-util-find-after`](https://github.com/syntax-tree/unist-util-find-after)
     — Find a node after another node;
-*   [`unist-util-find-all-after`](https://github.com/wooorm/unist-util-find-all-after)
+*   [`unist-util-find-all-after`](https://github.com/syntax-tree/unist-util-find-all-after)
     — Find nodes after another node;
-*   [`unist-util-find-all-before`](https://github.com/wooorm/unist-util-find-all-before)
+*   [`unist-util-find-all-before`](https://github.com/syntax-tree/unist-util-find-all-before)
     — Find nodes before another node;
-*   [`unist-util-find-before`](https://github.com/wooorm/unist-util-find-before)
+*   [`unist-util-find-before`](https://github.com/syntax-tree/unist-util-find-before)
     — Find a node before another node;
-*   [`unist-util-generated`](https://github.com/wooorm/unist-util-generated)
+*   [`unist-util-generated`](https://github.com/syntax-tree/unist-util-generated)
     — Check if a node is generated;
 *   [`unist-util-index`](https://github.com/eush77/unist-util-index)
     — Index nodes by property or computed key;
-*   [`unist-util-inspect`](https://github.com/wooorm/unist-util-inspect)
+*   [`unist-util-inspect`](https://github.com/syntax-tree/unist-util-inspect)
     — Node inspector;
-*   [`unist-util-is`](https://github.com/wooorm/unist-util-is)
+*   [`unist-util-is`](https://github.com/syntax-tree/unist-util-is)
     — Check if a node passes a test
 *   [`unist-util-map`](https://github.com/azu/unist-util-map)
     — Create a new tree by mapping nodes;
-*   [`unist-util-modify-children`](https://github.com/wooorm/unist-util-modify-children)
+*   [`unist-util-modify-children`](https://github.com/syntax-tree/unist-util-modify-children)
     — Modify direct children of a parent;
 *   [`unist-util-parents`](https://github.com/eush77/unist-util-parents)
     — `parent` references on nodes;
-*   [`unist-util-position`](https://github.com/wooorm/unist-util-position)
+*   [`unist-util-position`](https://github.com/syntax-tree/unist-util-position)
     — Get the position of nodes;
 *   [`unist-util-remove`](https://github.com/eush77/unist-util-remove)
     — Remove nodes from Unist trees;
-*   [`unist-util-remove-position`](https://github.com/wooorm/unist-util-remove-position)
+*   [`unist-util-remove-position`](https://github.com/syntax-tree/unist-util-remove-position)
     — Remove `position`s from a unist tree;
 *   [`unist-util-select`](https://github.com/eush77/unist-util-select)
     — Select nodes with CSS-like selectors;
-*   [`unist-util-source`](https://github.com/wooorm/unist-util-source)
+*   [`unist-util-source`](https://github.com/syntax-tree/unist-util-source)
     — Get the source of a value (node, location);
-*   [`unist-util-stringify-position`](https://github.com/wooorm/unist-util-stringify-position)
+*   [`unist-util-stringify-position`](https://github.com/syntax-tree/unist-util-stringify-position)
     — Stringify a node, location, or position;
-*   [`unist-util-visit`](https://github.com/wooorm/unist-util-visit)
+*   [`unist-util-visit`](https://github.com/syntax-tree/unist-util-visit)
     — Recursively walk over nodes;
-*   [`unist-util-visit-parents`](https://github.com/wooorm/unist-util-visit-parents)
+*   [`unist-util-visit-parents`](https://github.com/syntax-tree/unist-util-visit-parents)
     — Recursively walk over nodes, with a stack of parents;
-*   [`unist-util-visit-children`](https://github.com/wooorm/unist-util-visit-children)
+*   [`unist-util-visit-children`](https://github.com/syntax-tree/unist-util-visit-children)
     — Visit direct children of a parent;
 *   [`unist-builder`](https://github.com/eush77/unist-builder)
     — Helper for creating trees.
 
 <!-- Definitions -->
 
-[logo]: https://cdn.rawgit.com/wooorm/unist/76af1b6/logo.svg
+[logo]: https://cdn.rawgit.com/syntax-tree/unist/76af1b6/logo.svg
 
-[releases]: https://github.com/wooorm/unist/releases
+[releases]: https://github.com/syntax-tree/unist/releases
 
-[first-retext-commit]: https://github.com/wooorm/retext/commit/8fcb1ff
+[first-retext-commit]: https://github.com/syntax-tree/retext/commit/8fcb1ff
 
-[first-remark-commit]: https://github.com/wooorm/remark/commit/19585b8
+[first-remark-commit]: https://github.com/syntax-tree/remark/commit/19585b8
 
 [retext]: https://github.com/wooorm/retext
 
@@ -207,11 +207,11 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
 [hast]: https://github.com/wooorm/hast
 
-[nlcst]: https://github.com/wooorm/nlcst
+[nlcst]: https://github.com/syntax-tree/nlcst
 
-[mdast]: https://github.com/wooorm/mdast
+[mdast]: https://github.com/syntax-tree/mdast
 
-[vfile]: https://github.com/wooorm/vfile
+[vfile]: https://github.com/syntax-tree/vfile
 
 [remark-html]: https://github.com/wooorm/remark-html
 

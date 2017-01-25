@@ -151,9 +151,11 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-util-find-after`](https://github.com/syntax-tree/unist-util-find-after)
     — Find a node after another node;
 *   [`unist-util-find-all-after`](https://github.com/syntax-tree/unist-util-find-all-after)
-    — Find nodes after another node;
+    — Find nodes after another node or position;
 *   [`unist-util-find-all-before`](https://github.com/syntax-tree/unist-util-find-all-before)
-    — Find nodes before another node;
+    — Find nodes before another node or position;
+*   [`unist-util-find-all-between`](https://github.com/mrzmmr/unist-util-find-all-between)
+    — Find nodes between two nodes or positions;
 *   [`unist-util-find-before`](https://github.com/syntax-tree/unist-util-find-before)
     — Find a node before another node;
 *   [`unist-util-generated`](https://github.com/syntax-tree/unist-util-generated)

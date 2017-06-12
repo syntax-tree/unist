@@ -4,16 +4,13 @@
 
 ***
 
-**Unist** is the combination of three project, and more to come, which
-are the summation of at least [two][first-retext-commit]
-[years][first-remark-commit] of my work and the current epitome of that.
+**Unist** is the combination of three syntax trees, and more to come:
+[**mdast**][mdast] with [**remark**][remark] for markdown, [**nlcst**][nlcst]
+with [**retext**][retext] for prose, and [**hast**][hast] with
+[**rehype**][rehype] for HTML.
 
-It’s a system for processing input: parsing it into a syntax tree,
-transforming it through plug-ins, and compiling the tree to something
-else.
-
-This document explains some terminology relating to [**retext**][retext],
-[**remark**][remark], [**rehype**][rehype], and their related projects.
+This document explains some terminology relating to [**unified**][unified] and
+[**vfile**][vfile] as well.
 
 This document may not be released. See [releases][] for released
 documents.
@@ -199,10 +196,6 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
 [releases]: https://github.com/syntax-tree/unist/releases
 
-[first-retext-commit]: https://github.com/wooorm/retext/commit/8fcb1ff
-
-[first-remark-commit]: https://github.com/wooorm/remark/commit/19585b8
-
 [retext]: https://github.com/wooorm/retext
 
 [remark]: https://github.com/wooorm/remark
@@ -214,6 +207,8 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 [nlcst]: https://github.com/syntax-tree/nlcst
 
 [mdast]: https://github.com/syntax-tree/mdast
+
+[unified]: https://github.com/unifiedjs/unified
 
 [vfile]: https://github.com/vfile/vfile
 

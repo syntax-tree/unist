@@ -13,7 +13,7 @@ This document explains some terminology relating to [**unified**][unified] and
 [**vfile**][vfile] as well.
 
 This document may not be released. See [releases][] for released
-documents.
+documents. The latest released version is [`1.0.0`](https://github.com/syntax-tree/unist/releases/tag/1.0.0).
 
 ## Table of Contents
 

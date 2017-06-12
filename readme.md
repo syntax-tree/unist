@@ -63,8 +63,8 @@ interface Node {
 
 Data represents data associated with any node.  `Data` is a scope for
 plug-ins to store any information.  For example, [`remark-html`][remark-html]
-uses `htmlAttributes` to let other plug-ins specify attributes added
-to the compiled HTML element.
+uses `hProperties` to let other plug-ins specify properties added to the
+compiled HTML element.
 
 ```idl
 interface Data { }

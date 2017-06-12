@@ -187,6 +187,8 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
     — Recursively walk over nodes, with a stack of parents
 *   [`unist-util-visit-children`](https://github.com/syntax-tree/unist-util-visit-children)
     — Visit direct children of a parent
+*   [`unist-util-visit-all-after`](https://github.com/mrzmmr/unist-util-visit-all-after)
+    — Visit nodes after another node
 *   [`unist-builder`](https://github.com/eush77/unist-builder)
     — Helper for creating trees
 

@@ -191,6 +191,8 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
     — Visit nodes after another node
 *   [`unist-builder`](https://github.com/eush77/unist-builder)
     — Helper for creating trees
+*   [`unist-builder-blueprint`](https://github.com/eush77/unist-builder-blueprint)
+    — Convert Unist trees to unist-builder notation
 
 <!-- Definitions -->
 

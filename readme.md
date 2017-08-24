@@ -44,7 +44,7 @@ See [**nlcst**][nlcst] for more information on **retext** nodes,
 
 A Node represents any unit in the Unist hierarchy.  It is an abstract
 interface.  Interfaces extending **Node** must have a `type` property,
-and may have `data` or `location` properties.  `type`s are defined by
+and may have `data` or `position` properties.  `type`s are defined by
 their namespace.
 
 Subsets of Unist are allowed to define properties on interfaces which
@@ -55,7 +55,7 @@ extend Unist’s abstract interfaces.  For example, [mdast][] defines
 interface Node {
   type: string;
   data: Data?;
-  position: Location?;
+  position: Position?;
 }
 ```
 
@@ -70,32 +70,32 @@ compiled HTML element.
 interface Data { }
 ```
 
-#### `Location`
+#### `Position`
 
-**Location** references a range consisting of two points in a [Unist
-file][file].  **Location** consists of a `start` and `end` position.
+**Position** references a range consisting of two points in a [Unist
+file][file].  **Position** consists of a `start` and `end` point.
 And, if relevant, an `indent` property.
 
 When the value represented by a node is not present in the document
 corresponding to the syntax tree at the time of reading, it must not
-have a location.  These nodes are said to be _generated_.
+have positional information.  These nodes are said to be _generated_.
 
 ```idl
-interface Location {
-  start: Position;
-  end: Position;
+interface Position {
+  start: Point;
+  end: Point;
   indent: [uint32 >= 1]?;
 }
 ```
 
-#### `Position`
+#### `Point`
 
-**Position** references a point consisting of two indices in a
+**Point** references a point consisting of two indices in a
 [Unist file][file]: `line` and `column`, set to 1-based integers.  An
 `offset` (0-based) may be used.
 
 ```idl
-interface Position {
+interface Point {
   line: uint32 >= 1;
   column: uint32 >= 1;
   offset: uint32 >= 0?;
@@ -148,9 +148,9 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-util-find-after`](https://github.com/syntax-tree/unist-util-find-after)
     — Find a node after another node
 *   [`unist-util-find-all-after`](https://github.com/syntax-tree/unist-util-find-all-after)
-    — Find nodes after another node or position
+    — Find nodes after another node or index
 *   [`unist-util-find-all-before`](https://github.com/syntax-tree/unist-util-find-all-before)
-    — Find nodes before another node or position
+    — Find nodes before another node or index
 *   [`unist-util-find-all-between`](https://github.com/mrzmmr/unist-util-find-all-between)
     — Find nodes between two nodes or positions
 *   [`unist-util-find-before`](https://github.com/syntax-tree/unist-util-find-before)
@@ -170,17 +170,17 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-util-parents`](https://github.com/eush77/unist-util-parents)
     — `parent` references on nodes
 *   [`unist-util-position`](https://github.com/syntax-tree/unist-util-position)
-    — Get the position of nodes
+    — Get positional info of nodes
 *   [`unist-util-remove`](https://github.com/eush77/unist-util-remove)
     — Remove nodes from Unist trees
 *   [`unist-util-remove-position`](https://github.com/syntax-tree/unist-util-remove-position)
-    — Remove `position`s from a unist tree
+    — Remove positional info from a unist tree
 *   [`unist-util-select`](https://github.com/eush77/unist-util-select)
     — Select nodes with CSS-like selectors
 *   [`unist-util-source`](https://github.com/syntax-tree/unist-util-source)
-    — Get the source of a value (node, location)
+    — Get the source of a value (node or position) in a file
 *   [`unist-util-stringify-position`](https://github.com/syntax-tree/unist-util-stringify-position)
-    — Stringify a node, location, or position
+    — Stringify a node, position, or point
 *   [`unist-util-visit`](https://github.com/syntax-tree/unist-util-visit)
     — Recursively walk over nodes
 *   [`unist-util-visit-parents`](https://github.com/syntax-tree/unist-util-visit-parents)

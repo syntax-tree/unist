@@ -196,7 +196,7 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
 <!-- Definitions -->
 
-[logo]: https://cdn.rawgit.com/syntax-tree/unist/76af1b6/logo.svg
+[logo]: https://cdn.rawgit.com/syntax-tree/unist/b2943b1/logo.svg
 
 [releases]: https://github.com/syntax-tree/unist/releases
 

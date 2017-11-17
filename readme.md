@@ -26,6 +26,7 @@ documents. The latest released version is [`1.0.1`](https://github.com/syntax-tr
     *   [List of Utilities](#list-of-utilities)
 *   [Contribute](#contribute)
 *   [Acknowledgments](#acknowledgments)
+*   [License](#license)
 
 ## Unist nodes
 
@@ -222,6 +223,10 @@ Thanks to [**@jlevy**](https://github.com/jlevy),
 [**@gibson042**](https://github.com/gibson042), and
 [**@azu**](https://github.com/azu) for contributing commits since!
 
+## License
+
+[CC-BY-4.0][license] © [Titus Wormer][author]
+
 <!-- Definitions -->
 
 [logo]: https://cdn.rawgit.com/syntax-tree/unist/b2943b1/logo.svg
@@ -259,3 +264,7 @@ Thanks to [**@jlevy**](https://github.com/jlevy),
 [ideas]: https://github.com/syntax-tree/ideas
 
 [chat]: https://gitter.im/syntax-tree/Lobby
+
+[license]: https://creativecommons.org/licenses/by/4.0/
+
+[author]: http://wooorm.com

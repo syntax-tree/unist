@@ -25,6 +25,7 @@ documents. The latest released version is [`1.0.1`](https://github.com/syntax-tr
 *   [Unist utilities](#unist-utilities)
     *   [List of Utilities](#list-of-utilities)
 *   [Contribute](#contribute)
+*   [Acknowledgments](#acknowledgments)
 
 ## Unist nodes
 
@@ -208,6 +209,18 @@ Want to chat with the community and contributors?  Join us in [Gitter][chat]!
 Have an idea for a cool new utility or tool?  That’s great!  If you want
 feedback, help, or just to share it with the world you can do so by creating
 an issue in the [`syntax-tree/ideas`][ideas] repository!
+
+## Acknowledgments
+
+The initial release of this project was authored by
+[**@wooorm**](https://github.com/wooorm).
+
+Special thanks to [**@eush77**](https://github.com/eush77) for their work,
+ideas, and incredibly valuable feedback!
+
+Thanks to [**@jlevy**](https://github.com/jlevy),
+[**@gibson042**](https://github.com/gibson042), and
+[**@azu**](https://github.com/azu) for contributing commits since!
 
 <!-- Definitions -->
 

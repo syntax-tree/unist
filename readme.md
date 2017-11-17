@@ -24,6 +24,7 @@ documents. The latest released version is [`1.0.1`](https://github.com/syntax-tr
 *   [Unist files](#unist-files)
 *   [Unist utilities](#unist-utilities)
     *   [List of Utilities](#list-of-utilities)
+*   [Contribute](#contribute)
 
 ## Unist nodes
 
@@ -194,6 +195,20 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-builder-blueprint`](https://github.com/eush77/unist-builder-blueprint)
     — Convert Unist trees to unist-builder notation
 
+## Contribute
+
+**unist** is built by people just like you!  Check out
+[`contribute.md`][contribute] for ways to get started.
+
+This project has a [Code of Conduct][coc].  By interacting with this repository,
+organisation, or community you agree to abide by its terms.
+
+Want to chat with the community and contributors?  Join us in [Gitter][chat]!
+
+Have an idea for a cool new utility or tool?  That’s great!  If you want
+feedback, help, or just to share it with the world you can do so by creating
+an issue in the [`syntax-tree/ideas`][ideas] repository!
+
 <!-- Definitions -->
 
 [logo]: https://cdn.rawgit.com/syntax-tree/unist/b2943b1/logo.svg
@@ -223,3 +238,11 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 [data]: #data
 
 [file]: #unist-files
+
+[contribute]: contributing.md
+
+[coc]: code-of-conduct.md
+
+[ideas]: https://github.com/syntax-tree/ideas
+
+[chat]: https://gitter.im/syntax-tree/Lobby

@@ -219,9 +219,11 @@ The initial release of this project was authored by
 Special thanks to [**@eush77**](https://github.com/eush77) for their work,
 ideas, and incredibly valuable feedback!
 
-Thanks to [**@jlevy**](https://github.com/jlevy),
-[**@gibson042**](https://github.com/gibson042), and
-[**@azu**](https://github.com/azu) for contributing commits since!
+Thanks to [**@azu**](https://github.com/azu),
+[**@blahah**](https://github.com/blahah),
+[**@gibson042**](https://github.com/gibson042),
+[**@jlevy**](https://github.com/jlevy), and
+[**@mrzmmr**](https://github.com/mrzmmr) for contributing commits since!
 
 ## License
 

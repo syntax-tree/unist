@@ -235,11 +235,11 @@ Thanks to [**@azu**](https://github.com/azu),
 
 [releases]: https://github.com/syntax-tree/unist/releases
 
-[retext]: https://github.com/wooorm/retext
+[retext]: https://github.com/retextjs/retext
 
-[remark]: https://github.com/wooorm/remark
+[remark]: https://github.com/remarkjs/remark
 
-[rehype]: https://github.com/wooorm/rehype
+[rehype]: https://github.com/rehypejs/rehype
 
 [hast]: https://github.com/syntax-tree/hast
 
@@ -251,7 +251,7 @@ Thanks to [**@azu**](https://github.com/azu),
 
 [vfile]: https://github.com/vfile/vfile
 
-[remark-html]: https://github.com/wooorm/remark-html
+[remark-html]: https://github.com/remarkjs/remark-html
 
 [parent]: #parent
 

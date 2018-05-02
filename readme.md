@@ -132,7 +132,7 @@ interface Text <: Node {
 
 ###### Tree
 
-A **tree** is a node and all of its **descendants** (if any).
+A **tree** is a node and all of its [descendants][descendant] (if any).
 
 ###### Child
 
@@ -140,50 +140,52 @@ Node X is **child** of node Y, if Y’s `children` include X.
 
 ###### Parent
 
-Node X is **parent** of node Y, if Y is a **child** of X.
+Node X is **parent** of node Y, if Y is a [child][] of X.
 
 ###### Index
 
-The **index** of a **child** is its number of preceding **siblings**, or `0` if
-it has none.
+The **index** of a [child][] is its number of preceding [siblings][sibling], or
+`0` if it has none.
 
 ###### Sibling
 
-Node X is a **sibling** of node Y, if X and Y have the same **parent** (if any).
+Node X is a **sibling** of node Y, if X and Y have the same
+[parent][parent-term] (if any).
 
-The **previous sibling** of a **child** is its **sibling** at its **index**
+The **previous sibling** of a [child][] is its **sibling** at its [index][]
 minus 1.
 
-The **next sibling** of a **child** is its **sibling** at its **index**
+The **next sibling** of a [child][] is its **sibling** at its [index][]
 plus 1.
 
 ###### Root
 
-The **root** of an object is itself, if without **parent**, or the **root** of
-its **parent**.
+The **root** of an object is itself, if without [parent][parent-term] or the
+**root** of its [parent][parent-term].
 
-The **root** of a **tree** is any node in that **tree** without **parent**.
+The **root** of a [tree][] is any node in that [tree][] without
+[parent][parent-term].
 
 ###### Descendant
 
-Node X is **descendant** of node Y, if X is a **child** of Y, or if X is a
-**child** of node Z that is a **descendant** of Y.
+Node X is **descendant** of node Y, if X is a [child][] of Y, or if X is a
+[child][] of node Z that is a **descendant** of Y.
 
 An **inclusive descendant** is a node or one of its **descendants**.
 
 ###### Ancestor
 
-Node X is an **ancestor** of node Y, if Y is a **descendant** of X.
+Node X is an **ancestor** of node Y, if Y is a [descendant][] of X.
 
 An **inclusive ancestor** is a node or one of its **ancestors**.
 
 ###### Head
 
-The **head** of a node is its first **child** (if any).
+The **head** of a node is its first [child][] (if any).
 
 ###### Tail
 
-The **tail** of a node is its last **child** (if any).
+The **tail** of a node is its last [child][] (if any).
 
 ## Unist files
 
@@ -328,3 +330,15 @@ Thanks to [**@azu**](https://github.com/azu),
 [license]: https://creativecommons.org/licenses/by/4.0/
 
 [author]: http://wooorm.com
+
+[descendant]: #descendant
+
+[child]: #child
+
+[sibling]: #sibling
+
+[parent-term]: #parent-1
+
+[index]: #index
+
+[tree]: #tree

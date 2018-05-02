@@ -258,7 +258,7 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 ## Contribute
 
 **unist** is built by people just like you!  Check out
-[`contribute.md`][contribute] for ways to get started.
+[`contributing.md`][contributing] for ways to get started.
 
 This project has a [Code of Conduct][coc].  By interacting with this repository,
 organisation, or community you agree to abide by its terms.
@@ -317,7 +317,7 @@ Thanks to [**@azu**](https://github.com/azu),
 
 [file]: #unist-files
 
-[contribute]: contributing.md
+[contributing]: contributing.md
 
 [coc]: code-of-conduct.md
 

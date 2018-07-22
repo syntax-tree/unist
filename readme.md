@@ -218,6 +218,8 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
     — Find nodes between two nodes or positions
 *   [`unist-util-find-before`](https://github.com/syntax-tree/unist-util-find-before)
     — Find a node before another node
+*   [`unist-util-flatmap`](https://gitlab.com/staltz/unist-util-flatmap)
+    — Create a new tree by expanding a node into many
 *   [`unist-util-generated`](https://github.com/syntax-tree/unist-util-generated)
     — Check if a node is generated
 *   [`unist-util-index`](https://github.com/eush77/unist-util-index)

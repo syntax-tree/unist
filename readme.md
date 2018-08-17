@@ -48,8 +48,8 @@ See [**nlcst**][nlcst] for more information on **retext** nodes,
 
 A Node represents any unit in the Unist hierarchy.  It is an abstract
 interface.  Interfaces extending **Node** must have a `type` property,
-and may have `data` or `position` properties.  `type`s are defined by
-their namespace.
+and may have `data` or `position` properties.  The value of node [type][]s
+are defined by their namespace.
 
 Subsets of Unist are allowed to define properties on interfaces which
 extend Unist’s abstract interfaces.  For example, [mdast][] defines
@@ -186,6 +186,10 @@ The **head** of a node is its first [child][] (if any).
 ###### Tail
 
 The **tail** of a node is its last [child][] (if any).
+
+###### Type
+
+The **type** of a node is the value of its `type` property.
 
 ## Unist files
 
@@ -344,3 +348,5 @@ Thanks to [**@azu**](https://github.com/azu),
 [index]: #index
 
 [tree]: #tree
+
+[type]: #type

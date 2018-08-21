@@ -2,7 +2,7 @@
 
 **Uni**versal **S**yntax **T**ree.
 
-***
+* * *
 
 **Unist** is the combination of three syntax trees, and more to come:
 [**mdast**][mdast] with [**remark**][remark] for markdown, [**nlcst**][nlcst]
@@ -12,8 +12,9 @@ with [**retext**][retext] for prose, and [**hast**][hast] with
 This document explains some terminology relating to [**unified**][unified] and
 [**vfile**][vfile] as well.
 
-This document may not be released. See [releases][] for released
-documents. The latest released version is [`1.1.0`](https://github.com/syntax-tree/unist/releases/tag/1.1.0).
+This document may not be released.
+See [releases][] for released documents.
+The latest released version is [`1.1.0`](https://github.com/syntax-tree/unist/releases/tag/1.1.0).
 
 ## Table of Contents
 
@@ -31,14 +32,14 @@ documents. The latest released version is [`1.1.0`](https://github.com/syntax-tr
 
 ## Unist nodes
 
-Subsets of Unist can define new properties on new nodes, and plug-ins
-and utilities can define new [`data`][data] properties on nodes.  But,
-the values on those properties **must** be JSON values: `string`,
-`number`, `object`, `array`, `true`, `false`, or `null`.  This means
-that the syntax tree should be able to be converted to and from JSON
-and produce the same tree.  For example, in JavaScript, a tree should
-be able to be passed through `JSON.parse(JSON.stringify(tree))` and
-result in the same values.
+Subsets of Unist can define new properties on new nodes, and plug-ins and
+utilities can define new [`data`][data] properties on nodes.
+But, the values on those properties **must** be JSON values: `string`,
+`number`, `object`, `array`, `true`, `false`, or `null`.
+This means that the syntax tree should be able to be converted to and from JSON
+and produce the same tree.
+For example, in JavaScript, a tree should be able to be passed through
+`JSON.parse(JSON.stringify(tree))` and result in the same values.
 
 See [**nlcst**][nlcst] for more information on **retext** nodes,
 [**mdast**][mdast] for information on **remark** nodes, and
@@ -46,14 +47,15 @@ See [**nlcst**][nlcst] for more information on **retext** nodes,
 
 ### `Node`
 
-A Node represents any unit in the Unist hierarchy.  It is an abstract
-interface.  Interfaces extending **Node** must have a `type` property,
-and may have `data` or `position` properties.  The value of node [type][]s
-are defined by their namespace.
+A Node represents any unit in the Unist hierarchy.
+It is an abstract interface.
+Interfaces extending **Node** must have a `type` property, and may have
+`data` or `position` properties.
+The value of node [type][]s are defined by their namespace.
 
-Subsets of Unist are allowed to define properties on interfaces which
-extend Unist’s abstract interfaces.  For example, [mdast][] defines
-**Link** ([Parent][]) with a `url` property.
+Subsets of Unist are allowed to define properties on interfaces which extend
+Unist’s abstract interfaces.
+For example, [mdast][] defines **Link** ([Parent][]) with a `url` property.
 
 ```idl
 interface Node {
@@ -65,10 +67,10 @@ interface Node {
 
 #### `Data`
 
-Data represents data associated with any node.  `Data` is a scope for
-plug-ins to store any information.  For example, [`remark-html`][remark-html]
-uses `hProperties` to let other plug-ins specify properties added to the
-compiled HTML element.
+Data represents data associated with any node.
+`Data` is a scope for plug-ins to store any information.
+For example, [`remark-html`][remark-html] uses `hProperties` to let other
+plug-ins specify properties added to the compiled HTML element.
 
 ```idl
 interface Data { }
@@ -77,12 +79,14 @@ interface Data { }
 #### `Position`
 
 **Position** references a range consisting of two points in a [Unist
-file][file].  **Position** consists of a `start` and `end` point.
+file][file].
+**Position** consists of a `start` and `end` point.
 And, if relevant, an `indent` property.
 
 When the value represented by a node is not present in the document
-corresponding to the syntax tree at the time of reading, it must not
-have positional information.  These nodes are said to be _generated_.
+corresponding to the syntax tree at the time of reading, it must not have
+positional information.
+These nodes are said to be _generated_.
 
 ```idl
 interface Position {
@@ -94,9 +98,9 @@ interface Position {
 
 #### `Point`
 
-**Point** references a point consisting of two indices in a
-[Unist file][file]: `line` and `column`, set to 1-based integers.  An
-`offset` (0-based) may be used.
+**Point** references a point consisting of two indices in a [Unist file][file]:
+`line` and `column`, set to 1-based integers.
+An `offset` (0-based) may be used.
 
 ```idl
 interface Point {
@@ -108,8 +112,8 @@ interface Point {
 
 ### `Parent`
 
-Nodes containing other nodes (said to be **children**) extend the
-abstract interface **Parent** ([**Node**](#node)).
+Nodes containing other nodes (said to be **children**) extend the abstract
+interface **Parent** ([**Node**](#node)).
 
 ```idl
 interface Parent <: Node {
@@ -155,8 +159,7 @@ Node X is a **sibling** of node Y, if X and Y have the same
 The **previous sibling** of a [child][] is its **sibling** at its [index][]
 minus 1.
 
-The **next sibling** of a [child][] is its **sibling** at its [index][]
-plus 1.
+The **next sibling** of a [child][] is its **sibling** at its [index][] plus 1.
 
 ###### Root
 
@@ -193,21 +196,21 @@ The **type** of a node is the value of its `type` property.
 
 ## Unist files
 
-**Unist files** are virtual files (such as [**vfile**][vfile])
-representing documents at a certain location.  They are not limited to
-existing files, nor to the file-system.
+**Unist files** are virtual files (such as [**vfile**][vfile]) representing
+documents at a certain location.
+They are not limited to existing files, nor to the file-system.
 
 ## Unist utilities
 
-**Unist utilities** are functions which work with **unist nodes**,
-agnostic of **remark**, **retext**, or **rehype**.
+**Unist utilities** are functions which work with **unist nodes**, agnostic of
+**remark**, **retext**, or **rehype**.
 
 A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 
 ### List of Utilities
 
 *   [`unist-util-assert`](https://github.com/syntax-tree/unist-util-assert)
-    — Assert Unist nodes
+    — Assert nodes
 *   [`unist-util-filter`](https://github.com/eush77/unist-util-filter)
     — Create a new tree with all nodes that pass the given function
 *   [`unist-util-find`](https://github.com/blahah/unist-util-find)
@@ -241,9 +244,9 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-util-position`](https://github.com/syntax-tree/unist-util-position)
     — Get positional info of nodes
 *   [`unist-util-remove`](https://github.com/eush77/unist-util-remove)
-    — Remove nodes from Unist trees
+    — Remove nodes from trees
 *   [`unist-util-remove-position`](https://github.com/syntax-tree/unist-util-remove-position)
-    — Remove positional info from a unist tree
+    — Remove positional info from trees
 *   [`unist-util-select`](https://github.com/eush77/unist-util-select)
     — Select nodes with CSS-like selectors
 *   [`unist-util-source`](https://github.com/syntax-tree/unist-util-source)
@@ -261,21 +264,24 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-builder`](https://github.com/eush77/unist-builder)
     — Helper for creating trees
 *   [`unist-builder-blueprint`](https://github.com/eush77/unist-builder-blueprint)
-    — Convert Unist trees to unist-builder notation
+    — Convert Unist trees to `unist-builder` notation
 
 ## Contribute
 
-**unist** is built by people just like you!  Check out
-[`contributing.md`][contributing] for ways to get started.
+**unist** is built by people just like you!
+Check out [`contributing.md`][contributing] for ways to get started.
 
-This project has a [Code of Conduct][coc].  By interacting with this repository,
-organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
-Want to chat with the community and contributors?  Join us in [Gitter][chat]!
+Want to chat with the community and contributors?
+Join us in [Gitter][chat]!
 
-Have an idea for a cool new utility or tool?  That’s great!  If you want
-feedback, help, or just to share it with the world you can do so by creating
-an issue in the [`syntax-tree/ideas`][ideas] repository!
+Have an idea for a cool new utility or tool?
+That’s great!
+If you want feedback, help, or just to share it with the world you can do so by
+creating an issue in the [`syntax-tree/ideas`][ideas] repository!
 
 ## Acknowledgments
 

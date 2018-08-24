@@ -1,61 +1,91 @@
-# ![Unist][logo]
+# ![unist][logo]
 
 **Uni**versal **S**yntax **T**ree.
 
 * * *
 
-**Unist** is the combination of three syntax trees, and more to come:
-[**mdast**][mdast] with [**remark**][remark] for markdown, [**nlcst**][nlcst]
-with [**retext**][retext] for prose, and [**hast**][hast] with
-[**rehype**][rehype] for HTML.
-
-This document explains some terminology relating to [**unified**][unified] and
-[**vfile**][vfile] as well.
+**unist** is a specification for syntax trees.
+It has a big [ecosystem of utilities][list-of-utilities] in JavaScript for
+working with these trees.
+It’s implemented by several other specifications.
 
 This document may not be released.
 See [releases][] for released documents.
-The latest released version is [`1.1.0`](https://github.com/syntax-tree/unist/releases/tag/1.1.0).
+The latest released version is [`1.1.0`][release].
 
 ## Table of Contents
 
-*   [Unist nodes](#unist-nodes)
+*   [Introduction](#introduction)
+    *   [Syntax tree](#syntax-tree)
+    *   [Where this specification fits](#where-this-specification-fits)
+*   [Nodes](#nodes)
     *   [Node](#node)
     *   [Parent](#parent)
-    *   [Text](#text)
+    *   [Literal](#literal)
 *   [Glossary](#glossary)
-*   [Unist files](#unist-files)
-*   [Unist utilities](#unist-utilities)
+*   [Utilities](#utilities)
     *   [List of Utilities](#list-of-utilities)
+*   [References](#references)
 *   [Contribute](#contribute)
 *   [Acknowledgments](#acknowledgments)
 *   [License](#license)
 
-## Unist nodes
+## Introduction
 
-Subsets of Unist can define new properties on new nodes, and plug-ins and
-utilities can define new [`data`][data] properties on nodes.
-But, the values on those properties **must** be JSON values: `string`,
-`number`, `object`, `array`, `true`, `false`, or `null`.
-This means that the syntax tree should be able to be converted to and from JSON
-and produce the same tree.
-For example, in JavaScript, a tree should be able to be passed through
-`JSON.parse(JSON.stringify(tree))` and result in the same values.
+This document defines a general-purpose format for syntax trees.
+Development of unist started in July 2015.
+This specification is written in a [Web IDL][webidl]-like grammar.
 
-See [**nlcst**][nlcst] for more information on **retext** nodes,
-[**mdast**][mdast] for information on **remark** nodes, and
-[**hast**][hast] for information on **rehype** nodes.
+### Syntax tree
+
+Syntax trees are representations of source code or even natural language.
+These trees are abstractions that make it possible to analyse, transform,
+and generate code.
+
+Syntax trees [come in two flavours][abstract-vs-concrete-trees]:
+
+*   **concrete syntax trees**: structures that represent every detail (such
+    as white-space in white-space insensitive languages)
+*   **abstract syntax trees**: structures that only represent details relating
+    to the syntactic structure of code (such as ignoring whether a double or
+    single quote was used in languages that support both, such as JavaScript).
+
+This specification can express both abstract and concrete syntax trees.
+
+### Where this specification fits
+
+unist is not intended to be self-sufficient.
+Instead, it is expected that other specifications implement unist and extend
+it to express language specific nodes.
+For example, see projects such as [**mdast**][mdast] (for markdown),
+[**hast**][hast] (for HTML), and [**nlcst**][nlcst] (for natural language).
+
+unist relates to [JSON][] in that compliant syntax trees can be expressed
+completely in JSON.
+However, unist is not limited to JSON and can be expressed in other data
+formats, such as [XML][].
+
+unist relates to [JavaScript][] in that it has a rich [ecosystem of
+utilities][list-of-utilities] for working with compliant syntax trees in
+JavaScript.
+The five most used utilities combined are downloaded ten million times each
+month.
+However, unist is not limited to JavaScript and can be used in other
+programming languages.
+
+unist relates to the [unified][], [remark][], [rehype][], and [retext][]
+projects in that unist syntax trees are used throughout their ecosystems.
+
+unist relates to the [vfile][] project in that it accepts unist nodes for
+its message store, and that vfile can be a source [_file_][term-file] of a
+syntax tree.
+
+## Nodes
+
+Syntactic units in unist syntax trees are called nodes, and implement the
+[**Node**][dfn-node] interface.
 
 ### `Node`
-
-A Node represents any unit in the Unist hierarchy.
-It is an abstract interface.
-Interfaces extending **Node** must have a `type` property, and may have
-`data` or `position` properties.
-The value of node [type][]s are defined by their namespace.
-
-Subsets of Unist are allowed to define properties on interfaces which extend
-Unist’s abstract interfaces.
-For example, [mdast][] defines **Link** ([Parent][]) with a `url` property.
 
 ```idl
 interface Node {
@@ -65,28 +95,29 @@ interface Node {
 }
 ```
 
-#### `Data`
+The `type` field is a non-empty string representing the variant of a node.
+This field can be used to determine the [_type_][term-type] a node implements.
 
-Data represents data associated with any node.
-`Data` is a scope for plug-ins to store any information.
-For example, [`remark-html`][remark-html] uses `hProperties` to let other
-plug-ins specify properties added to the compiled HTML element.
+The `data` field represents information from the ecosystem.
+The value of the `data` field implements the [**Data**][dfn-data] interface.
 
-```idl
-interface Data { }
-```
+The `position` field represents the location of a node in a source document.
+The value of the `position` field implements the [**Position**][dfn-position]
+interface.
+The `position` field must not be present if a node is
+[_generated_][term-generated].
+
+Specifications implementing unist are encouraged to define more fields.
+Ecosystems can define fields on [**Data**][dfn-data].
+
+Any value in unist **must** be expressible in JSON values: `string`, `number`,
+`object`, `array`, `true`, `false`, or `null`.
+This means that the syntax tree should be able to be converted to and from JSON
+and produce the same tree.
+For example, in JavaScript, a tree can be passed through
+`JSON.parse(JSON.stringify(tree))` and result in the same tree.
 
 #### `Position`
-
-**Position** references a range consisting of two points in a [Unist
-file][file].
-**Position** consists of a `start` and `end` point.
-And, if relevant, an `indent` property.
-
-When the value represented by a node is not present in the document
-corresponding to the syntax tree at the time of reading, it must not have
-positional information.
-These nodes are said to be _generated_.
 
 ```idl
 interface Position {
@@ -96,24 +127,50 @@ interface Position {
 }
 ```
 
-#### `Point`
+**Position** represents the location of a node in a source [_file_][term-file].
 
-**Point** references a point consisting of two indices in a [Unist file][file]:
-`line` and `column`, set to 1-based integers.
-An `offset` (0-based) may be used.
+The `start` field of **Position** represents the place of the first character
+of the parsed source region.
+The `end` field of **Position** represents the place of the first character
+after the parsed source region.
+The value of the `start` and `end` fields implement the [**Point**][dfn-point]
+interface.
+
+The `indent` field of **Position** represents the start column at each index
+(plus start line) in the source region, for elements that span multiple lines.
+
+If the syntactic unit represented by a node is not present in the source
+[_file_][term-file] at the time of parsing, the node is said to be
+[_generated_][term-generated] and it must not have positional information.
+
+#### `Point`
 
 ```idl
 interface Point {
-  line: uint32 >= 1;
-  column: uint32 >= 1;
-  offset: uint32 >= 0?;
+  line: unsigned long >= 1;
+  column: unsigned long >= 1;
+  offset: unsigned long >= 0?;
 }
 ```
 
-### `Parent`
+**Point** represents one place in a source [_file_][term-file].
 
-Nodes containing other nodes (said to be **children**) extend the abstract
-interface **Parent** ([**Node**](#node)).
+The `line` field (1-indexed integer) represents a line in a source file.
+The `column` field (1-indexed integer) represents a column in a source file.
+The `offset` field (0-indexed integer) represents a character in a source file.
+
+#### `Data`
+
+```idl
+interface Data { }
+```
+
+**Data** represents information associated by the ecosystem with the node.
+
+This space is guaranteed to never be specified by unist or specifications
+implementing unist.
+
+### `Parent`
 
 ```idl
 interface Parent <: Node {
@@ -121,22 +178,29 @@ interface Parent <: Node {
 }
 ```
 
-### `Text`
+Nodes containing other nodes (said to be [_children_][term-child]) extend the
+abstract interface **Parent** ([**Node**][dfn-node]).
 
-Nodes containing a value extend the abstract interface **Text**
-([**Node**](#node)).
+The `children` field is a list representing the children of a node.
+
+### `Literal`
 
 ```idl
-interface Text <: Node {
-  value: string;
+interface Literal <: Node {
+  value: any;
 }
 ```
+
+Nodes containing a value extend the abstract interface **Literal**
+([**Node**][dfn-node]).
+
+The `value` field can contain any value.
 
 ## Glossary
 
 ###### Tree
 
-A **tree** is a node and all of its [descendants][descendant] (if any).
+A **tree** is a node and all of its [_descendants_][term-descendant] (if any).
 
 ###### Child
 
@@ -144,68 +208,95 @@ Node X is **child** of node Y, if Y’s `children` include X.
 
 ###### Parent
 
-Node X is **parent** of node Y, if Y is a [child][] of X.
+Node X is **parent** of node Y, if Y is a [_child_][term-child] of X.
 
 ###### Index
 
-The **index** of a [child][] is its number of preceding [siblings][sibling], or
-`0` if it has none.
+The **index** of a [_child_][term-child] is its number of preceding
+[_siblings_][term-sibling], or `0` if it has none.
 
 ###### Sibling
 
 Node X is a **sibling** of node Y, if X and Y have the same
-[parent][parent-term] (if any).
+[_parent_][term-parent] (if any).
 
-The **previous sibling** of a [child][] is its **sibling** at its [index][]
-minus 1.
+The **previous sibling** of a [_child_][term-child] is its **sibling** at its
+[_index_][term-index] minus 1.
 
-The **next sibling** of a [child][] is its **sibling** at its [index][] plus 1.
+The **next sibling** of a [_child_][term-child] is its **sibling** at its
+[_index_][term-index] plus 1.
 
 ###### Root
 
-The **root** of an object is itself, if without [parent][parent-term] or the
-**root** of its [parent][parent-term].
+The **root** of a node is itself, if without [_parent_][term-parent], or the
+**root** of its [_parent_][term-parent].
 
-The **root** of a [tree][] is any node in that [tree][] without
-[parent][parent-term].
+The **root** of a [_tree_][term-tree] is any node in that [_tree_][term-tree]
+without [_parent_][term-parent].
 
 ###### Descendant
 
-Node X is **descendant** of node Y, if X is a [child][] of Y, or if X is a
-[child][] of node Z that is a **descendant** of Y.
+Node X is **descendant** of node Y, if X is a [_child_][term-child] of Y, or if
+X is a [_child_][term-child] of node Z that is a **descendant** of Y.
 
 An **inclusive descendant** is a node or one of its **descendants**.
 
 ###### Ancestor
 
-Node X is an **ancestor** of node Y, if Y is a [descendant][] of X.
+Node X is an **ancestor** of node Y, if Y is a [_descendant_][term-descendant]
+of X.
 
 An **inclusive ancestor** is a node or one of its **ancestors**.
 
 ###### Head
 
-The **head** of a node is its first [child][] (if any).
+The **head** of a node is its first [_child_][term-child] (if any).
 
 ###### Tail
 
-The **tail** of a node is its last [child][] (if any).
+The **tail** of a node is its last [_child_][term-child] (if any).
+
+###### Leaf
+
+A **leaf** is a node with no [_children_][term-child].
+
+###### Branch
+
+A **branch** is a node with one or more [_children_][term-child].
+
+###### Generated
+
+A node is **generated** if it does not have [_positional
+information_][term-positional-info].
 
 ###### Type
 
-The **type** of a node is the value of its `type` property.
+The **type** of a node is the value of its `type` field.
 
-## Unist files
+###### Positional information
 
-**Unist files** are virtual files (such as [**vfile**][vfile]) representing
-documents at a certain location.
-They are not limited to existing files, nor to the file-system.
+The **positional information** of a node is the value of its `position` field.
 
-## Unist utilities
+###### File
 
-**Unist utilities** are functions which work with **unist nodes**, agnostic of
-**remark**, **retext**, or **rehype**.
+A **file** is a source document that represents the original file that was
+parsed to produce the syntax tree.
+[_Positional information_][term-positional-info] represents the place of a node
+in this file.
+Files are provided by the host environment and not defined by unist.
 
-A list of **vfile**-related utilities can be found at [**vfile**][vfile].
+For example, see projects such as [**vfile**][vfile].
+
+## Utilities
+
+**Utilities** are functions that work with nodes.
+
+There are several projects that deal with nodes from specifications
+implementing unist:
+
+*   [mdast utilities](https://github.com/syntax-tree/mdast#list-of-utilities)
+*   [hast utilities](https://github.com/syntax-tree/hast#list-of-utilities)
+*   [nlcst utilities](https://github.com/syntax-tree/nlcst#list-of-utilities)
 
 ### List of Utilities
 
@@ -264,7 +355,25 @@ A list of **vfile**-related utilities can be found at [**vfile**][vfile].
 *   [`unist-builder`](https://github.com/eush77/unist-builder)
     — Helper for creating trees
 *   [`unist-builder-blueprint`](https://github.com/eush77/unist-builder-blueprint)
-    — Convert Unist trees to `unist-builder` notation
+    — Convert trees to `unist-builder` notation
+
+## References
+
+*   **JavaScript**
+    [ECMAScript Language Specification][javascript].
+    Ecma International.
+*   **JSON**
+    [The JavaScript Object Notation (JSON) Data Interchange Format][json],
+    T. Bray.
+    IETF.
+*   **XML**
+    [Extensible Markup Language][xml],
+    T. Bray, J. Paoli, C. Sperberg-McQueen, E. Maler, F. Yergeau.
+    W3C.
+*   **Web IDL**
+    [Web IDL][webidl],
+    C. McCormack.
+    W3C.
 
 ## Contribute
 
@@ -291,45 +400,53 @@ The initial release of this project was authored by
 Special thanks to [**@eush77**](https://github.com/eush77) for their work,
 ideas, and incredibly valuable feedback!
 
-Thanks to [**@azu**](https://github.com/azu),
+Thanks to [**@anandthakker**](https://github.com/anandthakker),
+[**@anko**](https://github.com/anko),
+[**@arobase-che**](https://github.com/arobase-che),
+[**@azu**](https://github.com/azu),
+[**@BarryThePenguin**](https://github.com/BarryThePenguin),
+[**@ben-eb**](https://github.com/ben-eb),
 [**@blahah**](https://github.com/blahah),
+[**@ChristianMurphy**](https://github.com/ChristianMurphy),
+[**@derhuerst**](https://github.com/derhuerst),
+[**@dozoisch**](https://github.com/dozoisch),
+[**@eush77**](https://github.com/eush77),
+[**@fazouane-marouane**](https://github.com/fazouane-marouane),
 [**@gibson042**](https://github.com/gibson042),
-[**@jlevy**](https://github.com/jlevy), and
-[**@mrzmmr**](https://github.com/mrzmmr) for contributing commits since!
+[**@ikatyang**](https://github.com/ikatyang),
+[**@izumin5210**](https://github.com/izumin5210),
+[**@jasonLaster**](https://github.com/jasonLaster),
+[**@JDvorak**](https://github.com/JDvorak),
+[**@jlevy**](https://github.com/jlevy),
+[**@justjake**](https://github.com/justjake),
+[**@kmck**](https://github.com/kmck),
+[**@kt3k**](https://github.com/kt3k),
+[**@KyleAMathews**](https://github.com/KyleAMathews),
+[**@muraken720**](https://github.com/muraken720),
+[**@mrzmmr**](https://github.com/mrzmmr),
+[**@nwtn**](https://github.com/nwtn),
+[**@rhysd**](https://github.com/rhysd),
+[**@Rokt33r**](https://github.com/Rokt33r),
+[**@Sarah-Seo**](https://github.com/Sarah-Seo),
+[**@sethvincent**](https://github.com/sethvincent),
+[**@simov**](https://github.com/simov),
+[**@staltz**](https://github.com/staltz),
+[**@tmcw**](https://github.com/tmcw),
+and
+[**@vhf**](https://github.com/vhf),
+for contributing to unist and related projects!
 
 ## License
 
-[CC-BY-4.0][license] © [Titus Wormer][author]
+Copyright © [Titus Wormer][author].
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][license].
 
 <!-- Definitions -->
 
 [logo]: https://cdn.rawgit.com/syntax-tree/unist/b2943b1/logo.svg
 
 [releases]: https://github.com/syntax-tree/unist/releases
-
-[retext]: https://github.com/retextjs/retext
-
-[remark]: https://github.com/remarkjs/remark
-
-[rehype]: https://github.com/rehypejs/rehype
-
-[hast]: https://github.com/syntax-tree/hast
-
-[nlcst]: https://github.com/syntax-tree/nlcst
-
-[mdast]: https://github.com/syntax-tree/mdast
-
-[unified]: https://github.com/unifiedjs/unified
-
-[vfile]: https://github.com/vfile/vfile
-
-[remark-html]: https://github.com/remarkjs/remark-html
-
-[parent]: #parent
-
-[data]: #data
-
-[file]: #unist-files
 
 [contributing]: contributing.md
 
@@ -343,16 +460,60 @@ Thanks to [**@azu**](https://github.com/azu),
 
 [author]: http://wooorm.com
 
-[descendant]: #descendant
+[release]: https://github.com/syntax-tree/unist/releases/tag/1.1.0
 
-[child]: #child
+[abstract-vs-concrete-trees]: https://eli.thegreenplace.net/2009/02/16/abstract-vs-concrete-syntax-trees/
 
-[sibling]: #sibling
+[dfn-node]: #node
 
-[parent-term]: #parent-1
+[dfn-position]: #position
 
-[index]: #index
+[dfn-point]: #point
 
-[tree]: #tree
+[dfn-data]: #data
 
-[type]: #type
+[term-tree]: #tree
+
+[term-child]: #child
+
+[term-parent]: #parent-1
+
+[term-index]: #index
+
+[term-sibling]: #sibling
+
+[term-descendant]: #descendant
+
+[term-generated]: #generated
+
+[term-type]: #type
+
+[term-positional-info]: #positional-information
+
+[term-file]: #file
+
+[list-of-utilities]: #list-of-utilities
+
+[webidl]: https://heycam.github.io/webidl/
+
+[json]: https://tools.ietf.org/html/rfc7159
+
+[xml]: https://www.w3.org/TR/xml/
+
+[javascript]: https://www.ecma-international.org/ecma-262/9.0/index.html
+
+[hast]: https://github.com/syntax-tree/hast
+
+[nlcst]: https://github.com/syntax-tree/nlcst
+
+[mdast]: https://github.com/syntax-tree/mdast
+
+[unified]: https://github.com/unifiedjs/unified
+
+[remark]: https://github.com/remarkjs/remark
+
+[rehype]: https://github.com/rehypejs/rehype
+
+[retext]: https://github.com/retextjs/retext
+
+[vfile]: https://github.com/vfile/vfile

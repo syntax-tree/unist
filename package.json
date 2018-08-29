@@ -1,6 +1,5 @@
 {
   "name": "unist",
-  "private": true,
   "version": "0.0.0",
   "description": "universal syntax tree",
   "license": "CC-BY-4.0",
@@ -8,9 +7,11 @@
   "repository": "syntax-tree/unist",
   "bugs": "https://github.com/syntax-tree/unist/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (wooorm.com)",
+  "types": "./index.d.ts",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (wooorm.com)",
-    "Eugene Sharygin <eush77@gmail.com>"
+    "Eugene Sharygin <eush77@gmail.com>",
+    "Christian Murphy <christian.murphy.42@gmail.com>"
   ],
   "devDependencies": {
     "remark-cli": "^5.0.0",

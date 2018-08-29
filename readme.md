@@ -123,7 +123,7 @@ For example, in JavaScript, a tree can be passed through
 interface Position {
   start: Point;
   end: Point;
-  indent: [uint32 >= 1]?;
+  indent: [number >= 1]?;
 }
 ```
 
@@ -147,9 +147,9 @@ If the syntactic unit represented by a node is not present in the source
 
 ```idl
 interface Point {
-  line: unsigned long >= 1;
-  column: unsigned long >= 1;
-  offset: unsigned long >= 0?;
+  line: number >= 1;
+  column: number >= 1;
+  offset: number >= 0?;
 }
 ```
 

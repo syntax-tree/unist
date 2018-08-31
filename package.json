@@ -10,7 +10,8 @@
   "author": "Titus Wormer <tituswormer@gmail.com> (wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (wooorm.com)",
-    "Eugene Sharygin <eush77@gmail.com>"
+    "Eugene Sharygin <eush77@gmail.com>",
+    "Christian Murphy <christian.murphy.42@gmail.com>"
   ],
   "devDependencies": {
     "remark-cli": "^5.0.0",

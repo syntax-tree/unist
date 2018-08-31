@@ -132,7 +132,7 @@ interface Position {
 The `start` field of **Position** represents the place of the first character
 of the parsed source region.
 The `end` field of **Position** represents the place of the first character
-after the parsed source region.
+after the parsed source region, whether it exists or not.
 The value of the `start` and `end` fields implement the [**Point**][dfn-point]
 interface.
 
@@ -142,6 +142,20 @@ The `indent` field of **Position** represents the start column at each index
 If the syntactic unit represented by a node is not present in the source
 [_file_][term-file] at the time of parsing, the node is said to be
 [_generated_][term-generated] and it must not have positional information.
+
+For example, if the following value was represented as unist:
+
+```markdown
+alpha
+bravo
+```
+
+…the first word (`alpha`) would start at line `1`, column `1`, offset `0`, and
+end at line `1`, column `6`, offset `5`.
+The line feed would start at line `1`, column `6`, offset `5`, and end at line
+`2`, column `1`, offset `6`.
+The last word (`bravo`) would start at line `2`, column `1`, offset `6`, and
+end at line `2`, column `6`, offset `11`.
 
 #### `Point`
 

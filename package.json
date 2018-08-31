@@ -18,7 +18,8 @@
     "remark-preset-wooorm": "^4.0.0"
   },
   "scripts": {
-    "format": "remark . -qfo"
+    "format": "remark . -qfo",
+    "test": "npm run format"
   },
   "remarkConfig": {
     "plugins": [

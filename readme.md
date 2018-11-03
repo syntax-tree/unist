@@ -89,9 +89,9 @@ Syntactic units in unist syntax trees are called nodes, and implement the
 
 ```idl
 interface Node {
-  type: string;
-  data: Data?;
-  position: Position?;
+  type: string
+  data: Data?
+  position: Position?
 }
 ```
 
@@ -121,9 +121,9 @@ For example, in JavaScript, a tree can be passed through
 
 ```idl
 interface Position {
-  start: Point;
-  end: Point;
-  indent: [number >= 1]?;
+  start: Point
+  end: Point
+  indent: [number >= 1]?
 }
 ```
 
@@ -161,9 +161,9 @@ end at line `2`, column `6`, offset `11`.
 
 ```idl
 interface Point {
-  line: number >= 1;
-  column: number >= 1;
-  offset: number >= 0?;
+  line: number >= 1
+  column: number >= 1
+  offset: number >= 0?
 }
 ```
 
@@ -188,7 +188,7 @@ implementing unist.
 
 ```idl
 interface Parent <: Node {
-  children: [Node];
+  children: [Node]
 }
 ```
 
@@ -201,7 +201,7 @@ The `children` field is a list representing the children of a node.
 
 ```idl
 interface Literal <: Node {
-  value: any;
+  value: any
 }
 ```
 

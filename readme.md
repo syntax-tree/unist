@@ -399,7 +399,7 @@ By interacting with this repository, organisation, or community you agree to
 abide by its terms.
 
 Want to chat with the community and contributors?
-Join us in [Gitter][chat]!
+Join us in [spectrum][chat]!
 
 Have an idea for a cool new utility or tool?
 That’s great!
@@ -468,7 +468,7 @@ This work is licensed under a
 
 [ideas]: https://github.com/syntax-tree/ideas
 
-[chat]: https://gitter.im/syntax-tree/Lobby
+[chat]: https://spectrum.chat/unified/syntax-tree
 
 [license]: https://creativecommons.org/licenses/by/4.0/
 

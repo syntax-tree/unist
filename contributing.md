@@ -34,22 +34,22 @@ help you faster.
 
 ## Questions
 
-Please chat and ask questions on Gitter!  Jump in there and lurk, talk to us,
+Please chat and ask questions on spectrum!  Jump in there and lurk, talk to us,
 and help others.
 
-*   [**unified**](https://gitter.im/unifiedjs/Lobby)
+*   [**unified**](https://spectrum.chat/unified/unified)
     — Topics relating to [**unified**][unified] in general
-*   [**vfile**](https://gitter.im/vfile/Lobby)
+*   [**vfile**](https://spectrum.chat/unified/vfile)
     — Topics relating to [**vfile**][vfile]: virtual files
-*   [**syntax-tree**](https://gitter.im/syntax-tree/Lobby)
+*   [**syntax-tree**](https://spectrum.chat/unified/syntax-tree)
     — Topics relating to [**syntax-tree**][syntax-tree] and [**unist**][unist]
-*   [**remark**](https://gitter.im/remarkjs/Lobby)
+*   [**remark**](https://spectrum.chat/unified/remark)
     — Topics relating to the [**remark**][remark] ecosystem, markdown,
     and [**mdast**][mdast]
-*   [**rehype**](https://gitter.im/rehypejs/Lobby)
+*   [**rehype**](https://spectrum.chat/unified/rehype)
     — Topics relating to the [**rehype**][rehype] ecosystem, HTML,
     and [**hast**][hast]
-*   [**retext**](https://gitter.im/retextjs/Lobby)
+*   [**retext**](https://spectrum.chat/unified/retext)
     — Topics relating to the [**retext**][retext] ecosystem, natural language,
     and [**nlcst**][nlcst]
 

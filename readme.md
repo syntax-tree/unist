@@ -458,7 +458,7 @@ This work is licensed under a
 
 <!-- Definitions -->
 
-[logo]: https://cdn.rawgit.com/syntax-tree/unist/b2943b1/logo.svg
+[logo]: https://raw.githubusercontent.com/syntax-tree/unist/b187eb7/logo.svg?sanitize=true
 
 [releases]: https://github.com/syntax-tree/unist/releases
 

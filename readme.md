@@ -173,6 +173,9 @@ The `line` field (1-indexed integer) represents a line in a source file.
 The `column` field (1-indexed integer) represents a column in a source file.
 The `offset` field (0-indexed integer) represents a character in a source file.
 
+The term character means a (UTF-16) code unit which is defined in the
+[Web IDL][webidl] specification.
+
 #### `Data`
 
 ```idl

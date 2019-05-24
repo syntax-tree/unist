@@ -23,6 +23,7 @@ The latest released version is [`2.0.0`][release].
     *   [Parent](#parent)
     *   [Literal](#literal)
 *   [Glossary](#glossary)
+*   [Tree traversal](#tree-traversal)
 *   [Utilities](#utilities)
     *   [List of Utilities](#list-of-utilities)
 *   [References](#references)
@@ -304,6 +305,102 @@ Files are provided by the host environment and not defined by unist.
 
 For example, see projects such as [**vfile**][vfile].
 
+###### Preorder
+
+In **preorder** (**NLR**) is [depth-first][traversal-depth] [tree
+traversal][traversal] that performs the following steps for each node:
+
+1.  **N**: visit _N_ itself
+2.  **L**: traverse [_head_][term-head] (then its _next sibling_, recursively
+    moving forward until reaching _tail_)
+3.  **R**: traverse [_tail_][term-tail]
+
+###### Postorder
+
+In **postorder** (**LRN**) is [depth-first][traversal-depth] [tree
+traversal][traversal] that performs the following steps for each node:
+
+1.  **L**: traverse [_head_][term-head] (then its _next sibling_, recursively
+    moving forward until reaching _tail_)
+2.  **R**: traverse [_tail_][term-tail]
+3.  **N**: visit _N_ itself
+
+## Tree traversal
+
+**Tree traversal** is a common task when working with a [_tree_][term-tree] to
+search it.
+
+Tree traversal is typically either _breadth-first_ or _depth-first_.
+
+In the following examples, we’ll work with this tree:
+
+```ascii
+                 +---+
+                 | A |
+                 +-+-+
+                   |
+             +-----+-----+
+             |           |
+           +-+-+       +-+-+
+           | B |       | F |
+           +-+-+       +-+-+
+             |           |
+    +-----+--+--+        |
+    |     |     |        |
+  +-+-+ +-+-+ +-+-+    +-+-+
+  | C | | D | | E |    | G |
+  +---+ +---+ +---+    +---+
+```
+
+##### Breadth-first traversal
+
+**Breadth-first traversal** is visiting a node and all its
+[_siblings_][term-sibling] to broaden the search at that level, before
+traversing [_children_][term-child].
+
+For the syntax tree defined in the diagram, a breadth-first traversal first
+searches the root of the tree (**A**), then its children (**B** and **F**), then
+their children (**C**, **D**, **E**, and **G**).
+
+##### Depth-first traversal
+
+Alternatively, and more commonly, a **depth-first traversal** is used.
+The search is first deepened, by traversing [_children_][term-child], before
+traversing [_siblings_][term-sibling]s.
+
+For the syntax tree defined in the diagram, a depth-first traversal first
+searches the root of the tree (**A**), then one of its children (**B** or
+**F**), then their children (**C**, **D**, and **E**, or **G**).
+
+For a given node N with [_children_][term-child], a **depth-first traversal**
+performs three steps, simplified to only binary trees (every node has
+[_head_][term-head] and [_tail_][term-tail], but no other children):
+
+*   **N**: visit _N_ itself
+*   **L**: traverse [_head_][term-head]
+*   **R**: traverse [_tail_][term-tail]
+
+These steps can be done in any order, but for non-binary trees, **L** and **R**
+occur together.
+If **L** is done before **R**, the traversal is called _left-to-right_
+traversal, otherwise it is called _right-to-left_ traversal.
+In the case of non-binary trees, the other children between _head_ and _tail_
+are processed in that order as well, so if **L** is before **R**, first _head_
+is traversed (**L**), then its _next sibling_ is traversed, etcetera, until
+finally _tail_ (**R**) is traversed.
+
+Because **L** and **R** occur together for non-binary trees, we can produce four
+types of orders: NLR, NRL, LRN, RLN.
+
+For the syntax tree defined in the diagram, NLR or LRN traversal thus first
+search the root of the tree (**A**), then its head (**B**), then its children
+from left-to-right (**C**, **D**, and then **E**).
+After all [_descendants_][term-descendant] of **B** are traversed, its next
+sibling (**F**) is traversed and then finally its only child (**G**).
+
+NLR and LRN (_left-to-right_) are most commonly used and respectively named
+[_preorder_][term-preorder] or [_postorder_][term-postorder].
+
 ## Utilities
 
 **Utilities** are functions that work with nodes.
@@ -491,6 +588,10 @@ This work is licensed under a
 
 [term-tree]: #tree
 
+[term-preorder]: #preorder
+
+[term-postorder]: #postorder
+
 [term-child]: #child
 
 [term-parent]: #parent-1
@@ -501,6 +602,10 @@ This work is licensed under a
 
 [term-descendant]: #descendant
 
+[term-head]: #head
+
+[term-tail]: #tail
+
 [term-generated]: #generated
 
 [term-type]: #type
@@ -508,6 +613,10 @@ This work is licensed under a
 [term-positional-info]: #positional-information
 
 [term-file]: #file
+
+[traversal]: #tree-traversal
+
+[traversal-depth]: #depth-first-traversal
 
 [list-of-utilities]: #list-of-utilities
 

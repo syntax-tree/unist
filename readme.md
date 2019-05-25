@@ -365,7 +365,7 @@ their children (**C**, **D**, **E**, and **G**).
 
 Alternatively, and more commonly, **depth-first traversal** is used.
 The search is first deepened, by traversing [_children_][term-child], before
-traversing [_siblings_][term-sibling]s.
+traversing [_siblings_][term-sibling].
 
 For the syntax tree defined in the diagram, a depth-first traversal first
 searches the root of the tree (**A**), then one of its children (**B** or

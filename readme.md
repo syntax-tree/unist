@@ -308,7 +308,7 @@ For example, see projects such as [**vfile**][vfile].
 ###### Preorder
 
 In **preorder** (**NLR**) is [depth-first][traversal-depth] [tree
-traversal][traversal] that performs the following steps for each node:
+traversal][traversal] that performs the following steps for each node _N_:
 
 1.  **N**: visit _N_ itself
 2.  **L**: traverse [_head_][term-head] (then its _next sibling_, recursively
@@ -318,7 +318,7 @@ traversal][traversal] that performs the following steps for each node:
 ###### Postorder
 
 In **postorder** (**LRN**) is [depth-first][traversal-depth] [tree
-traversal][traversal] that performs the following steps for each node:
+traversal][traversal] that performs the following steps for each node _N_:
 
 1.  **L**: traverse [_head_][term-head] (then its _next sibling_, recursively
     moving forward until reaching _tail_)
@@ -329,7 +329,6 @@ traversal][traversal] that performs the following steps for each node:
 
 **Tree traversal** is a common task when working with a [_tree_][term-tree] to
 search it.
-
 Tree traversal is typically either _breadth-first_ or _depth-first_.
 
 In the following examples, we’ll work with this tree:
@@ -352,7 +351,7 @@ In the following examples, we’ll work with this tree:
   +---+ +---+ +---+    +---+
 ```
 
-##### Breadth-first traversal
+###### Breadth-first traversal
 
 **Breadth-first traversal** is visiting a node and all its
 [_siblings_][term-sibling] to broaden the search at that level, before
@@ -362,9 +361,9 @@ For the syntax tree defined in the diagram, a breadth-first traversal first
 searches the root of the tree (**A**), then its children (**B** and **F**), then
 their children (**C**, **D**, **E**, and **G**).
 
-##### Depth-first traversal
+###### Depth-first traversal
 
-Alternatively, and more commonly, a **depth-first traversal** is used.
+Alternatively, and more commonly, **depth-first traversal** is used.
 The search is first deepened, by traversing [_children_][term-child], before
 traversing [_siblings_][term-sibling]s.
 
@@ -372,7 +371,7 @@ For the syntax tree defined in the diagram, a depth-first traversal first
 searches the root of the tree (**A**), then one of its children (**B** or
 **F**), then their children (**C**, **D**, and **E**, or **G**).
 
-For a given node N with [_children_][term-child], a **depth-first traversal**
+For a given node _N_ with [_children_][term-child], a **depth-first traversal**
 performs three steps, simplified to only binary trees (every node has
 [_head_][term-head] and [_tail_][term-tail], but no other children):
 
@@ -385,21 +384,22 @@ occur together.
 If **L** is done before **R**, the traversal is called _left-to-right_
 traversal, otherwise it is called _right-to-left_ traversal.
 In the case of non-binary trees, the other children between _head_ and _tail_
-are processed in that order as well, so if **L** is before **R**, first _head_
-is traversed (**L**), then its _next sibling_ is traversed, etcetera, until
-finally _tail_ (**R**) is traversed.
+are processed in that order as well, so for _left-to-right_ traversal, first
+_head_ is traversed (**L**), then its _next sibling_ is traversed, etcetera,
+until finally _tail_ (**R**) is traversed.
 
 Because **L** and **R** occur together for non-binary trees, we can produce four
 types of orders: NLR, NRL, LRN, RLN.
 
-For the syntax tree defined in the diagram, NLR or LRN traversal thus first
-search the root of the tree (**A**), then its head (**B**), then its children
-from left-to-right (**C**, **D**, and then **E**).
+NLR and LRN (the two _left-to-right_ traversal options) are most commonly used
+and respectively named [_preorder_][term-preorder] and
+[_postorder_][term-postorder].
+
+For the syntax tree defined in the diagram, _preorder_ and _postorder_ traversal
+thus first search the root of the tree (**A**), then its head (**B**), then its
+children from left-to-right (**C**, **D**, and then **E**).
 After all [_descendants_][term-descendant] of **B** are traversed, its next
 sibling (**F**) is traversed and then finally its only child (**G**).
-
-NLR and LRN (_left-to-right_) are most commonly used and respectively named
-[_preorder_][term-preorder] or [_postorder_][term-postorder].
 
 ## Utilities
 

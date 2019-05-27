@@ -470,6 +470,8 @@ implementing unist:
     — Remove positional info from trees
 *   [`unist-util-select`](https://github.com/eush77/unist-util-select)
     — Select nodes with CSS-like selectors
+*   [`unist-util-size`](https://github.com/syntax-tree/unist-util-size)
+    — Calculate the number of nodes in a tree
 *   [`unist-util-source`](https://github.com/syntax-tree/unist-util-source)
     — Get the source of a value (node or position) in a file
 *   [`unist-util-stringify-position`](https://github.com/syntax-tree/unist-util-stringify-position)

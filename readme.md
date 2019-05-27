@@ -325,6 +325,22 @@ traversal][traversal] that performs the following steps for each node _N_:
 2.  **R**: traverse [_tail_][term-tail]
 3.  **N**: visit _N_ itself
 
+###### Enter
+
+**Enter** is a step right before other steps performed on a given node _N_ when
+[**traversing**][traversal] a tree.
+
+For example, when performing _preorder_ traversal, **enter** is the first step
+taken, right before visiting _N_ itself.
+
+###### Exit
+
+**Exit** is a step right after other steps performed on a given node _N_ when
+[**traversing**][traversal] a tree.
+
+For example, when performing _preorder_ traversal, **exit** is the last step
+taken, right after traversing the [_tail_][term-tail] of _N_.
+
 ## Tree traversal
 
 **Tree traversal** is a common task when working with a [_tree_][term-tree] to

@@ -486,6 +486,8 @@ implementing unist:
     — Helper for creating trees
 *   [`unist-builder-blueprint`](https://github.com/eush77/unist-builder-blueprint)
     — Convert trees to `unist-builder` notation
+*   [`unist-builder-blueprint-cli`](https://github.com/eush77/unist-builder-blueprint-cli)
+    — CLI to Convert trees to `unist-builder` notation
 
 ## References
 

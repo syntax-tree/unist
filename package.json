@@ -1,5 +1,4 @@
 {
-  "name": "unist",
   "private": true,
   "version": "0.0.0",
   "description": "universal syntax tree",

@@ -69,7 +69,7 @@ formats, such as [XML][].
 unist relates to [JavaScript][] in that it has a rich [ecosystem of
 utilities][list-of-utilities] for working with compliant syntax trees in
 JavaScript.
-The five most used utilities combined are downloaded ten million times each
+The five most used utilities combined are downloaded thirty million times each
 month.
 However, unist is not limited to JavaScript and can be used in other programming
 languages.

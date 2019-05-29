@@ -78,7 +78,7 @@ unist relates to the [unified][], [remark][], [rehype][], and [retext][]
 projects in that unist syntax trees are used throughout their ecosystems.
 
 unist relates to the [vfile][] project in that it accepts unist nodes for
-its message store, and that vfile can be a source [_file_][term-file] of a
+its message store, and that vfile can be a source [*file*][term-file] of a
 syntax tree.
 
 ## Nodes
@@ -97,7 +97,7 @@ interface Node {
 ```
 
 The `type` field is a non-empty string representing the variant of a node.
-This field can be used to determine the [_type_][term-type] a node implements.
+This field can be used to determine the [*type*][term-type] a node implements.
 
 The `data` field represents information from the ecosystem.
 The value of the `data` field implements the [**Data**][dfn-data] interface.
@@ -106,7 +106,7 @@ The `position` field represents the location of a node in a source document.
 The value of the `position` field implements the [**Position**][dfn-position]
 interface.
 The `position` field must not be present if a node is
-[_generated_][term-generated].
+[*generated*][term-generated].
 
 Specifications implementing unist are encouraged to define more fields.
 Ecosystems can define fields on [**Data**][dfn-data].
@@ -128,7 +128,7 @@ interface Position {
 }
 ```
 
-**Position** represents the location of a node in a source [_file_][term-file].
+**Position** represents the location of a node in a source [*file*][term-file].
 
 The `start` field of **Position** represents the place of the first character
 of the parsed source region.
@@ -141,8 +141,8 @@ The `indent` field of **Position** represents the start column at each index
 (plus start line) in the source region, for elements that span multiple lines.
 
 If the syntactic unit represented by a node is not present in the source
-[_file_][term-file] at the time of parsing, the node is said to be
-[_generated_][term-generated] and it must not have positional information.
+[*file*][term-file] at the time of parsing, the node is said to be
+[*generated*][term-generated] and it must not have positional information.
 
 For example, if the following value was represented as unist:
 
@@ -168,7 +168,7 @@ interface Point {
 }
 ```
 
-**Point** represents one place in a source [_file_][term-file].
+**Point** represents one place in a source [*file*][term-file].
 
 The `line` field (1-indexed integer) represents a line in a source file.
 The `column` field (1-indexed integer) represents a column in a source file.
@@ -196,7 +196,7 @@ interface Parent <: Node {
 }
 ```
 
-Nodes containing other nodes (said to be [_children_][term-child]) extend the
+Nodes containing other nodes (said to be [*children*][term-child]) extend the
 abstract interface **Parent** ([**Node**][dfn-node]).
 
 The `children` field is a list representing the children of a node.
@@ -218,7 +218,7 @@ The `value` field can contain any value.
 
 ###### Tree
 
-A **tree** is a node and all of its [_descendants_][term-descendant] (if any).
+A **tree** is a node and all of its [*descendants*][term-descendant] (if any).
 
 ###### Child
 
@@ -226,66 +226,66 @@ Node X is **child** of node Y, if Y’s `children` include X.
 
 ###### Parent
 
-Node X is **parent** of node Y, if Y is a [_child_][term-child] of X.
+Node X is **parent** of node Y, if Y is a [*child*][term-child] of X.
 
 ###### Index
 
-The **index** of a [_child_][term-child] is its number of preceding
-[_siblings_][term-sibling], or `0` if it has none.
+The **index** of a [*child*][term-child] is its number of preceding
+[*siblings*][term-sibling], or `0` if it has none.
 
 ###### Sibling
 
 Node X is a **sibling** of node Y, if X and Y have the same
-[_parent_][term-parent] (if any).
+[*parent*][term-parent] (if any).
 
-The **previous sibling** of a [_child_][term-child] is its **sibling** at its
-[_index_][term-index] minus 1.
+The **previous sibling** of a [*child*][term-child] is its **sibling** at its
+[*index*][term-index] minus 1.
 
-The **next sibling** of a [_child_][term-child] is its **sibling** at its
-[_index_][term-index] plus 1.
+The **next sibling** of a [*child*][term-child] is its **sibling** at its
+[*index*][term-index] plus 1.
 
 ###### Root
 
-The **root** of a node is itself, if without [_parent_][term-parent], or the
-**root** of its [_parent_][term-parent].
+The **root** of a node is itself, if without [*parent*][term-parent], or the
+**root** of its [*parent*][term-parent].
 
-The **root** of a [_tree_][term-tree] is any node in that [_tree_][term-tree]
-without [_parent_][term-parent].
+The **root** of a [*tree*][term-tree] is any node in that [*tree*][term-tree]
+without [*parent*][term-parent].
 
 ###### Descendant
 
-Node X is **descendant** of node Y, if X is a [_child_][term-child] of Y, or if
-X is a [_child_][term-child] of node Z that is a **descendant** of Y.
+Node X is **descendant** of node Y, if X is a [*child*][term-child] of Y, or if
+X is a [*child*][term-child] of node Z that is a **descendant** of Y.
 
 An **inclusive descendant** is a node or one of its **descendants**.
 
 ###### Ancestor
 
-Node X is an **ancestor** of node Y, if Y is a [_descendant_][term-descendant]
+Node X is an **ancestor** of node Y, if Y is a [*descendant*][term-descendant]
 of X.
 
 An **inclusive ancestor** is a node or one of its **ancestors**.
 
 ###### Head
 
-The **head** of a node is its first [_child_][term-child] (if any).
+The **head** of a node is its first [*child*][term-child] (if any).
 
 ###### Tail
 
-The **tail** of a node is its last [_child_][term-child] (if any).
+The **tail** of a node is its last [*child*][term-child] (if any).
 
 ###### Leaf
 
-A **leaf** is a node with no [_children_][term-child].
+A **leaf** is a node with no [*children*][term-child].
 
 ###### Branch
 
-A **branch** is a node with one or more [_children_][term-child].
+A **branch** is a node with one or more [*children*][term-child].
 
 ###### Generated
 
-A node is **generated** if it does not have [_positional
-information_][term-positional-info].
+A node is **generated** if it does not have [*positional
+information*][term-positional-info].
 
 ###### Type
 
@@ -299,7 +299,7 @@ The **positional information** of a node is the value of its `position` field.
 
 A **file** is a source document that represents the original file that was
 parsed to produce the syntax tree.
-[_Positional information_][term-positional-info] represents the place of a node
+[*Positional information*][term-positional-info] represents the place of a node
 in this file.
 Files are provided by the host environment and not defined by unist.
 
@@ -308,44 +308,44 @@ For example, see projects such as [**vfile**][vfile].
 ###### Preorder
 
 In **preorder** (**NLR**) is [depth-first][traversal-depth] [tree
-traversal][traversal] that performs the following steps for each node _N_:
+traversal][traversal] that performs the following steps for each node *N*:
 
-1.  **N**: visit _N_ itself
-2.  **L**: traverse [_head_][term-head] (then its _next sibling_, recursively
-    moving forward until reaching _tail_)
-3.  **R**: traverse [_tail_][term-tail]
+1.  **N**: visit *N* itself
+2.  **L**: traverse [*head*][term-head] (then its *next sibling*, recursively
+    moving forward until reaching *tail*)
+3.  **R**: traverse [*tail*][term-tail]
 
 ###### Postorder
 
 In **postorder** (**LRN**) is [depth-first][traversal-depth] [tree
-traversal][traversal] that performs the following steps for each node _N_:
+traversal][traversal] that performs the following steps for each node *N*:
 
-1.  **L**: traverse [_head_][term-head] (then its _next sibling_, recursively
-    moving forward until reaching _tail_)
-2.  **R**: traverse [_tail_][term-tail]
-3.  **N**: visit _N_ itself
+1.  **L**: traverse [*head*][term-head] (then its *next sibling*, recursively
+    moving forward until reaching *tail*)
+2.  **R**: traverse [*tail*][term-tail]
+3.  **N**: visit *N* itself
 
 ###### Enter
 
-**Enter** is a step right before other steps performed on a given node _N_ when
+**Enter** is a step right before other steps performed on a given node *N* when
 [**traversing**][traversal] a tree.
 
-For example, when performing _preorder_ traversal, **enter** is the first step
-taken, right before visiting _N_ itself.
+For example, when performing *preorder* traversal, **enter** is the first step
+taken, right before visiting *N* itself.
 
 ###### Exit
 
-**Exit** is a step right after other steps performed on a given node _N_ when
+**Exit** is a step right after other steps performed on a given node *N* when
 [**traversing**][traversal] a tree.
 
-For example, when performing _preorder_ traversal, **exit** is the last step
-taken, right after traversing the [_tail_][term-tail] of _N_.
+For example, when performing *preorder* traversal, **exit** is the last step
+taken, right after traversing the [*tail*][term-tail] of *N*.
 
 ## Tree traversal
 
-**Tree traversal** is a common task when working with a [_tree_][term-tree] to
+**Tree traversal** is a common task when working with a [*tree*][term-tree] to
 search it.
-Tree traversal is typically either _breadth-first_ or _depth-first_.
+Tree traversal is typically either *breadth-first* or *depth-first*.
 
 In the following examples, we’ll work with this tree:
 
@@ -370,8 +370,8 @@ In the following examples, we’ll work with this tree:
 ###### Breadth-first traversal
 
 **Breadth-first traversal** is visiting a node and all its
-[_siblings_][term-sibling] to broaden the search at that level, before
-traversing [_children_][term-child].
+[*siblings*][term-sibling] to broaden the search at that level, before
+traversing [*children*][term-child].
 
 For the syntax tree defined in the diagram, a breadth-first traversal first
 searches the root of the tree (**A**), then its children (**B** and **F**), then
@@ -380,41 +380,41 @@ their children (**C**, **D**, **E**, and **G**).
 ###### Depth-first traversal
 
 Alternatively, and more commonly, **depth-first traversal** is used.
-The search is first deepened, by traversing [_children_][term-child], before
-traversing [_siblings_][term-sibling].
+The search is first deepened, by traversing [*children*][term-child], before
+traversing [*siblings*][term-sibling].
 
 For the syntax tree defined in the diagram, a depth-first traversal first
 searches the root of the tree (**A**), then one of its children (**B** or
 **F**), then their children (**C**, **D**, and **E**, or **G**).
 
-For a given node _N_ with [_children_][term-child], a **depth-first traversal**
+For a given node *N* with [*children*][term-child], a **depth-first traversal**
 performs three steps, simplified to only binary trees (every node has
-[_head_][term-head] and [_tail_][term-tail], but no other children):
+[*head*][term-head] and [*tail*][term-tail], but no other children):
 
-*   **N**: visit _N_ itself
-*   **L**: traverse [_head_][term-head]
-*   **R**: traverse [_tail_][term-tail]
+*   **N**: visit *N* itself
+*   **L**: traverse [*head*][term-head]
+*   **R**: traverse [*tail*][term-tail]
 
 These steps can be done in any order, but for non-binary trees, **L** and **R**
 occur together.
-If **L** is done before **R**, the traversal is called _left-to-right_
-traversal, otherwise it is called _right-to-left_ traversal.
-In the case of non-binary trees, the other children between _head_ and _tail_
-are processed in that order as well, so for _left-to-right_ traversal, first
-_head_ is traversed (**L**), then its _next sibling_ is traversed, etcetera,
-until finally _tail_ (**R**) is traversed.
+If **L** is done before **R**, the traversal is called *left-to-right*
+traversal, otherwise it is called *right-to-left* traversal.
+In the case of non-binary trees, the other children between *head* and *tail*
+are processed in that order as well, so for *left-to-right* traversal, first
+*head* is traversed (**L**), then its *next sibling* is traversed, etcetera,
+until finally *tail* (**R**) is traversed.
 
 Because **L** and **R** occur together for non-binary trees, we can produce four
 types of orders: NLR, NRL, LRN, RLN.
 
-NLR and LRN (the two _left-to-right_ traversal options) are most commonly used
-and respectively named [_preorder_][term-preorder] and
-[_postorder_][term-postorder].
+NLR and LRN (the two *left-to-right* traversal options) are most commonly used
+and respectively named [*preorder*][term-preorder] and
+[*postorder*][term-postorder].
 
-For the syntax tree defined in the diagram, _preorder_ and _postorder_ traversal
+For the syntax tree defined in the diagram, *preorder* and *postorder* traversal
 thus first search the root of the tree (**A**), then its head (**B**), then its
 children from left-to-right (**C**, **D**, and then **E**).
-After all [_descendants_][term-descendant] of **B** are traversed, its next
+After all [*descendants*][term-descendant] of **B** are traversed, its next
 sibling (**F**) is traversed and then finally its only child (**G**).
 
 ## Utilities

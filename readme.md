@@ -511,20 +511,17 @@ implementing unist:
 
 ## Contribute
 
-**unist** is built by people just like you!
-Check out [`contributing.md`][contributing] for ways to get started.
+See [`contributing.md`][contributing] in [`syntax-tree/.github`][health] for
+ways to get started.
+See [`support.md`][support] for ways to get help.
+Ideas for new utilities and tools can be posted in [`syntax-tree/ideas`][ideas].
+
+A curated list of awesome syntax-tree, unist, hast, mdast, and nlcst resources
+can be found in [awesome syntax-tree][awesome].
 
 This project has a [Code of Conduct][coc].
 By interacting with this repository, organisation, or community you agree to
 abide by its terms.
-
-Want to chat with the community and contributors?
-Join us in [spectrum][chat]!
-
-Have an idea for a cool new utility or tool?
-That’s great!
-If you want feedback, help, or just to share it with the world you can do so by
-creating an issue in the [`syntax-tree/ideas`][ideas] repository!
 
 ## Acknowledgments
 
@@ -578,17 +575,21 @@ This work is licensed under a
 
 <!-- Definitions -->
 
-[logo]: https://raw.githubusercontent.com/syntax-tree/unist/b187eb7/logo.svg?sanitize=true
+[health]: https://github.com/syntax-tree/.github
 
-[releases]: https://github.com/syntax-tree/unist/releases
+[contributing]: https://github.com/syntax-tree/.github/blob/master/contributing.md
 
-[contributing]: contributing.md
+[support]: https://github.com/syntax-tree/.github/blob/master/support.md
 
-[coc]: code-of-conduct.md
+[coc]: https://github.com/syntax-tree/.github/blob/master/code-of-conduct.md
+
+[awesome]: https://github.com/syntax-tree/awesome-syntax-tree
 
 [ideas]: https://github.com/syntax-tree/ideas
 
-[chat]: https://spectrum.chat/unified/syntax-tree
+[logo]: https://raw.githubusercontent.com/syntax-tree/unist/b187eb7/logo.svg?sanitize=true
+
+[releases]: https://github.com/syntax-tree/unist/releases
 
 [license]: https://creativecommons.org/licenses/by/4.0/
 

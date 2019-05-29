@@ -40,13 +40,13 @@ This specification is written in a [Web IDL][webidl]-like grammar.
 ### Syntax tree
 
 Syntax trees are representations of source code or even natural language.
-These trees are abstractions that make it possible to analyse, transform,
-and generate code.
+These trees are abstractions that make it possible to analyse, transform, and
+generate code.
 
 Syntax trees [come in two flavours][abstract-vs-concrete-trees]:
 
-*   **concrete syntax trees**: structures that represent every detail (such
-    as white-space in white-space insensitive languages)
+*   **concrete syntax trees**: structures that represent every detail (such as
+    white-space in white-space insensitive languages)
 *   **abstract syntax trees**: structures that only represent details relating
     to the syntactic structure of code (such as ignoring whether a double or
     single quote was used in languages that support both, such as JavaScript).
@@ -56,9 +56,9 @@ This specification can express both abstract and concrete syntax trees.
 ### Where this specification fits
 
 unist is not intended to be self-sufficient.
-Instead, it is expected that other specifications implement unist and extend
-it to express language specific nodes.
-For example, see projects such as [**mdast**][mdast] (for markdown),
+Instead, it is expected that other specifications implement unist and extend it
+to express language specific nodes.
+For example, see projects such as [**mdast**][mdast] (for Markdown),
 [**hast**][hast] (for HTML), and [**nlcst**][nlcst] (for natural language).
 
 unist relates to [JSON][] in that compliant syntax trees can be expressed
@@ -71,15 +71,15 @@ utilities][list-of-utilities] for working with compliant syntax trees in
 JavaScript.
 The five most used utilities combined are downloaded ten million times each
 month.
-However, unist is not limited to JavaScript and can be used in other
-programming languages.
+However, unist is not limited to JavaScript and can be used in other programming
+languages.
 
 unist relates to the [unified][], [remark][], [rehype][], and [retext][]
 projects in that unist syntax trees are used throughout their ecosystems.
 
-unist relates to the [vfile][] project in that it accepts unist nodes for
-its message store, and that vfile can be a source [*file*][term-file] of a
-syntax tree.
+unist relates to the [vfile][] project in that it accepts unist nodes for its
+message store, and that vfile can be a source [*file*][term-file] of a syntax
+tree.
 
 ## Nodes
 
@@ -130,8 +130,8 @@ interface Position {
 
 **Position** represents the location of a node in a source [*file*][term-file].
 
-The `start` field of **Position** represents the place of the first character
-of the parsed source region.
+The `start` field of **Position** represents the place of the first character of
+the parsed source region.
 The `end` field of **Position** represents the place of the first character
 after the parsed source region, whether it exists or not.
 The value of the `start` and `end` fields implement the [**Point**][dfn-point]
@@ -155,8 +155,8 @@ bravo
 end at line `1`, column `6`, offset `5`.
 The line feed would start at line `1`, column `6`, offset `5`, and end at line
 `2`, column `1`, offset `6`.
-The last word (`bravo`) would start at line `2`, column `1`, offset `6`, and
-end at line `2`, column `6`, offset `11`.
+The last word (`bravo`) would start at line `2`, column `1`, offset `6`, and end
+at line `2`, column `6`, offset `11`.
 
 #### `Point`
 
@@ -421,8 +421,8 @@ sibling (**F**) is traversed and then finally its only child (**G**).
 
 **Utilities** are functions that work with nodes.
 
-There are several projects that deal with nodes from specifications
-implementing unist:
+There are several projects that deal with nodes from specifications implementing
+unist:
 
 *   [mdast utilities](https://github.com/syntax-tree/mdast#list-of-utilities)
 *   [hast utilities](https://github.com/syntax-tree/hast#list-of-utilities)
@@ -493,18 +493,18 @@ implementing unist:
 
 ## References
 
-*   **JavaScript**
+*   **JavaScript**:
     [ECMAScript Language Specification][javascript].
     Ecma International.
-*   **JSON**
+*   **JSON**:
     [The JavaScript Object Notation (JSON) Data Interchange Format][json],
     T. Bray.
     IETF.
-*   **XML**
+*   **XML**:
     [Extensible Markup Language][xml],
     T. Bray, J. Paoli, C. Sperberg-McQueen, E. Maler, F. Yergeau.
     W3C.
-*   **Web IDL**
+*   **Web IDL**:
     [Web IDL][webidl],
     C. McCormack.
     W3C.
@@ -591,7 +591,7 @@ for contributing to unist and related projects!
 
 [license]: https://creativecommons.org/licenses/by/4.0/
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
 
 [release]: https://github.com/syntax-tree/unist/releases/tag/2.0.0
 

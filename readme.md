@@ -432,7 +432,7 @@ unist:
 
 *   [`unist-util-assert`](https://github.com/syntax-tree/unist-util-assert)
     — Assert nodes
-*   [`unist-util-filter`](https://github.com/eush77/unist-util-filter)
+*   [`unist-util-filter`](https://github.com/syntax-tree/unist-util-filter)
     — Create a new tree with all nodes that pass the given function
 *   [`unist-util-find`](https://github.com/blahah/unist-util-find)
     — Find a node by condition
@@ -450,25 +450,25 @@ unist:
     — Create a new tree by expanding a node into many
 *   [`unist-util-generated`](https://github.com/syntax-tree/unist-util-generated)
     — Check if a node is generated
-*   [`unist-util-index`](https://github.com/eush77/unist-util-index)
+*   [`unist-util-index`](https://github.com/syntax-tree/unist-util-index)
     — Index nodes by property or computed key
 *   [`unist-util-inspect`](https://github.com/syntax-tree/unist-util-inspect)
     — Node inspector
 *   [`unist-util-is`](https://github.com/syntax-tree/unist-util-is)
     — Check if a node passes a test
-*   [`unist-util-map`](https://github.com/azu/unist-util-map)
+*   [`unist-util-map`](https://github.com/syntax-tree/unist-util-map)
     — Create a new tree by mapping nodes
 *   [`unist-util-modify-children`](https://github.com/syntax-tree/unist-util-modify-children)
     — Modify direct children of a parent
-*   [`unist-util-parents`](https://github.com/eush77/unist-util-parents)
+*   [`unist-util-parents`](https://github.com/syntax-tree/unist-util-parents)
     — `parent` references on nodes
 *   [`unist-util-position`](https://github.com/syntax-tree/unist-util-position)
     — Get positional info of nodes
-*   [`unist-util-remove`](https://github.com/eush77/unist-util-remove)
+*   [`unist-util-remove`](https://github.com/syntax-tree/unist-util-remove)
     — Remove nodes from trees
 *   [`unist-util-remove-position`](https://github.com/syntax-tree/unist-util-remove-position)
     — Remove positional info from trees
-*   [`unist-util-select`](https://github.com/eush77/unist-util-select)
+*   [`unist-util-select`](https://github.com/syntax-tree/unist-util-select)
     — Select nodes with CSS-like selectors
 *   [`unist-util-size`](https://github.com/syntax-tree/unist-util-size)
     — Calculate the number of nodes in a tree
@@ -484,11 +484,11 @@ unist:
     — Visit direct children of a parent
 *   [`unist-util-visit-all-after`](https://github.com/mrzmmr/unist-util-visit-all-after)
     — Visit nodes after another node
-*   [`unist-builder`](https://github.com/eush77/unist-builder)
+*   [`unist-builder`](https://github.com/syntax-tree/unist-builder)
     — Helper for creating trees
-*   [`unist-builder-blueprint`](https://github.com/eush77/unist-builder-blueprint)
+*   [`unist-builder-blueprint`](https://github.com/syntax-tree/unist-builder-blueprint)
     — Convert trees to `unist-builder` notation
-*   [`unist-builder-blueprint-cli`](https://github.com/eush77/unist-builder-blueprint-cli)
+*   [`unist-builder-blueprint-cli`](https://github.com/syntax-tree/unist-builder-blueprint-cli)
     — CLI to Convert trees to `unist-builder` notation
 
 ## References

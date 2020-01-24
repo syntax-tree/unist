@@ -446,6 +446,8 @@ unist:
     — Find nodes between two nodes or positions
 *   [`unist-util-find-before`](https://github.com/syntax-tree/unist-util-find-before)
     — Find a node before another node
+*   [`unist-util-flat-filter`](https://github.com/unicorn-utterances/unist-util-flat-filter)
+    — Create a new tree with all nodes that pass the given function without references to the parent
 *   [`unist-util-flatmap`](https://gitlab.com/staltz/unist-util-flatmap)
     — Create a new tree by expanding a node into many
 *   [`unist-util-generated`](https://github.com/syntax-tree/unist-util-generated)

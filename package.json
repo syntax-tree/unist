@@ -16,7 +16,7 @@
     "remark-cli": "^7.0.0",
     "remark-preset-wooorm": "^6.0.0"
   },
-  "scripts": {
+  "scripts": 
     "format": "remark . -qfo",
     "test": "npm run format"
   },

@@ -19,9 +19,9 @@ The latest released version is [`2.0.0`][release].
     *   [Syntax tree](#syntax-tree)
     *   [Where this specification fits](#where-this-specification-fits)
 *   [Nodes](#nodes)
-    *   [Node](#node)
-    *   [Parent](#parent)
-    *   [Literal](#literal)
+    *   [`Node`](#node)
+    *   [`Parent`](#parent)
+    *   [`Literal`](#literal)
 *   [Glossary](#glossary)
 *   [Tree traversal](#tree-traversal)
 *   [Utilities](#utilities)
@@ -59,7 +59,8 @@ unist is not intended to be self-sufficient.
 Instead, it is expected that other specifications implement unist and extend it
 to express language specific nodes.
 For example, see projects such as [**mdast**][mdast] (for Markdown),
-[**hast**][hast] (for HTML), and [**nlcst**][nlcst] (for natural language).
+[**hast**][hast] (for HTML), [**xast**][xast] (for XML), and [**nlcst**][nlcst]
+(for natural language).
 
 unist relates to [JSON][] in that compliant syntax trees can be expressed
 completely in JSON.
@@ -426,6 +427,7 @@ unist:
 
 *   [mdast utilities](https://github.com/syntax-tree/mdast#list-of-utilities)
 *   [hast utilities](https://github.com/syntax-tree/hast#list-of-utilities)
+*   [xast utilities](https://github.com/syntax-tree/xast#list-of-utilities)
 *   [nlcst utilities](https://github.com/syntax-tree/nlcst#list-of-utilities)
 
 ### List of Utilities
@@ -447,7 +449,8 @@ unist:
 *   [`unist-util-find-before`](https://github.com/syntax-tree/unist-util-find-before)
     — Find a node before another node
 *   [`unist-util-flat-filter`](https://github.com/unicorn-utterances/unist-util-flat-filter)
-    — Create a new tree with all nodes that pass the given function without references to the parent
+    — Create a new tree with all nodes that pass the given function without
+    references to the parent
 *   [`unist-util-flatmap`](https://gitlab.com/staltz/unist-util-flatmap)
     — Create a new tree by expanding a node into many
 *   [`unist-util-generated`](https://github.com/syntax-tree/unist-util-generated)
@@ -518,8 +521,8 @@ ways to get started.
 See [`support.md`][support] for ways to get help.
 Ideas for new utilities and tools can be posted in [`syntax-tree/ideas`][ideas].
 
-A curated list of awesome syntax-tree, unist, hast, mdast, and nlcst resources
-can be found in [awesome syntax-tree][awesome].
+A curated list of awesome syntax-tree, unist, hast, xast, mdast, and nlcst
+resources can be found in [awesome syntax-tree][awesome].
 
 This project has a [Code of Conduct][coc].
 By interacting with this repository, organisation, or community you agree to
@@ -658,6 +661,8 @@ for contributing to unist and related projects!
 [javascript]: https://www.ecma-international.org/ecma-262/9.0/index.html
 
 [hast]: https://github.com/syntax-tree/hast
+
+[xast]: https://github.com/syntax-tree/xast
 
 [nlcst]: https://github.com/syntax-tree/nlcst
 

@@ -25,7 +25,7 @@ The latest released version is [`2.0.0`][release].
 *   [Glossary](#glossary)
 *   [Tree traversal](#tree-traversal)
 *   [Utilities](#utilities)
-    *   [List of Utilities](#list-of-utilities)
+    *   [List of utilities](#list-of-utilities)
 *   [References](#references)
 *   [Contribute](#contribute)
 *   [Acknowledgments](#acknowledgments)
@@ -40,10 +40,10 @@ This specification is written in a [Web IDL][webidl]-like grammar.
 ### Syntax tree
 
 Syntax trees are representations of source code or even natural language.
-These trees are abstractions that make it possible to analyse, transform, and
+These trees are abstractions that make it possible to analyze, transform, and
 generate code.
 
-Syntax trees [come in two flavours][abstract-vs-concrete-trees]:
+Syntax trees [come in two flavors][abstract-vs-concrete-trees]:
 
 *   **concrete syntax trees**: structures that represent every detail (such as
     white-space in white-space insensitive languages)
@@ -425,12 +425,12 @@ sibling (**F**) is traversed and then finally its only child (**G**).
 There are several projects that deal with nodes from specifications implementing
 unist:
 
-*   [mdast utilities](https://github.com/syntax-tree/mdast#list-of-utilities)
 *   [hast utilities](https://github.com/syntax-tree/hast#list-of-utilities)
-*   [xast utilities](https://github.com/syntax-tree/xast#list-of-utilities)
+*   [mdast utilities](https://github.com/syntax-tree/mdast#list-of-utilities)
 *   [nlcst utilities](https://github.com/syntax-tree/nlcst#list-of-utilities)
+*   [xast utilities](https://github.com/syntax-tree/xast#list-of-utilities)
 
-### List of Utilities
+### List of utilities
 
 *   [`unist-util-assert`](https://github.com/syntax-tree/unist-util-assert)
     — Assert nodes
@@ -524,8 +524,8 @@ Ideas for new utilities and tools can be posted in [`syntax-tree/ideas`][ideas].
 A curated list of awesome syntax-tree, unist, hast, xast, mdast, and nlcst
 resources can be found in [awesome syntax-tree][awesome].
 
-This project has a [Code of Conduct][coc].
-By interacting with this repository, organisation, or community you agree to
+This project has a [code of conduct][coc].
+By interacting with this repository, organization, or community you agree to
 abide by its terms.
 
 ## Acknowledgments

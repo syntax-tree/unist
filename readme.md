@@ -2,7 +2,7 @@
 
 **Uni**versal **S**yntax **T**ree.
 
-* * *
+***
 
 **unist** is a specification for syntax trees.
 It has a big [ecosystem of utilities][list-of-utilities] in JavaScript for

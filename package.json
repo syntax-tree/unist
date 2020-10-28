@@ -13,8 +13,8 @@
     "Christian Murphy <christian.murphy.42@gmail.com>"
   ],
   "devDependencies": {
-    "remark-cli": "^8.0.0",
-    "remark-preset-wooorm": "^7.0.0"
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0"
   },
   "scripts": {
     "format": "remark . -qfo",

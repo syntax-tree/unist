@@ -598,7 +598,7 @@ for contributing to unist and related projects!
 
 [ideas]: https://github.com/syntax-tree/ideas
 
-[logo]: https://raw.githubusercontent.com/syntax-tree/unist/b187eb7/logo.svg?sanitize=true
+[logo]: https://raw.githubusercontent.com/syntax-tree/unist/367da2e/logo.svg?sanitize=true
 
 [releases]: https://github.com/syntax-tree/unist/releases
 

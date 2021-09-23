@@ -431,7 +431,7 @@ unist:
 
 ### List of utilities
 
-*   [`unist-util-ancestor`](https://github.com/gorange/unist-util-ancestor)
+*   [`unist-util-ancestor`](https://github.com/gorango/unist-util-ancestor)
     — get the common ancestor of one or more nodes
 *   [`unist-util-assert`](https://github.com/syntax-tree/unist-util-assert)
     — assert nodes

@@ -475,6 +475,8 @@ unist:
     — remove nodes from trees
 *   [`unist-util-remove-position`](https://github.com/syntax-tree/unist-util-remove-position)
     — remove positional info from trees
+*   [`unist-util-replace-all-between`](https://github.com/unicorn-utterances/unist-util-replace-all-between)
+    — replace nodes between two nodes or positions
 *   [`unist-util-select`](https://github.com/syntax-tree/unist-util-select)
     — select nodes with CSS-like selectors
 *   [`unist-util-size`](https://github.com/syntax-tree/unist-util-size)
@@ -497,8 +499,6 @@ unist:
     — convert trees to `unist-builder` notation
 *   [`unist-builder-blueprint-cli`](https://github.com/syntax-tree/unist-builder-blueprint-cli)
     — CLI to convert trees to `unist-builder` notation
-*   [`unist-util-replace-all-between`](https://github.com/unicorn-utterances/unist-util-replace-all-between)
-    — replace nodes between two nodes or positions
 
 ## References
 

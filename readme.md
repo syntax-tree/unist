@@ -497,6 +497,8 @@ unist:
     — convert trees to `unist-builder` notation
 *   [`unist-builder-blueprint-cli`](https://github.com/syntax-tree/unist-builder-blueprint-cli)
     — CLI to convert trees to `unist-builder` notation
+*   [`unist-util-replace-all-between`](https://github.com/unicorn-utterances/unist-util-replace-all-between)
+    — replace nodes between two nodes or positions
 
 ## References
 

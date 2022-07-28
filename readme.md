@@ -349,22 +349,12 @@ Tree traversal is typically either *breadth-first* or *depth-first*.
 
 In the following examples, we’ll work with this tree:
 
-```ascii
-                 +---+
-                 | A |
-                 +-+-+
-                   |
-             +-----+-----+
-             |           |
-           +-+-+       +-+-+
-           | B |       | F |
-           +-+-+       +-+-+
-             |           |
-    +-----+--+--+        |
-    |     |     |        |
-  +-+-+ +-+-+ +-+-+    +-+-+
-  | C | | D | | E |    | G |
-  +---+ +---+ +---+    +---+
+```mermaid
+graph TD
+    A-->B-->C
+        B-->D
+        B-->E
+    A-->F-->G
 ```
 
 ###### Breadth-first traversal

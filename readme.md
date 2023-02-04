@@ -18,6 +18,7 @@ The latest released version is [`2.0.0`][release].
 *   [Intro](#intro)
     *   [Syntax tree](#syntax-tree)
     *   [Where this specification fits](#where-this-specification-fits)
+*   [Types](#types)
 *   [Nodes](#nodes)
     *   [`Node`](#node)
     *   [`Parent`](#parent)
@@ -80,6 +81,15 @@ projects in that unist syntax trees are used throughout their ecosystems.
 unist relates to the [vfile][] project in that it accepts unist nodes for its
 message store, and that vfile can be a source *[file][term-file]* of a syntax
 tree.
+
+## Types
+
+If you are using TypeScript, you can use the unist types by installing them
+with npm:
+
+```sh
+npm install @types/unist
+```
 
 ## Nodes
 

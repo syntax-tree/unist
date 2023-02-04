@@ -124,7 +124,6 @@ For example, in JavaScript, a tree can be passed through
 interface Position {
   start: Point
   end: Point
-  indent: [number >= 1]?
 }
 ```
 
@@ -136,9 +135,6 @@ The `end` field of **Position** represents the place of the first character
 after the parsed source region, whether it exists or not.
 The value of the `start` and `end` fields implement the **[Point][dfn-point]**
 interface.
-
-The `indent` field of **Position** represents the start column at each index
-(plus start line) in the source region, for elements that span multiple lines.
 
 If the syntactic unit represented by a node is not present in the source
 *[file][term-file]* at the time of parsing, the node is said to be

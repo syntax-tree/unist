@@ -515,7 +515,6 @@ unist:
 See [`contributing.md`][contributing] in [`syntax-tree/.github`][health] for
 ways to get started.
 See [`support.md`][support] for ways to get help.
-Ideas for new utilities and tools can be posted in [`syntax-tree/ideas`][ideas].
 
 A curated list of awesome syntax-tree, unist, hast, xast, mdast, and nlcst
 resources can be found in [awesome syntax-tree][awesome].
@@ -584,15 +583,13 @@ for contributing to unist and related projects!
 
 [health]: https://github.com/syntax-tree/.github
 
-[contributing]: https://github.com/syntax-tree/.github/blob/HEAD/contributing.md
+[contributing]: https://github.com/syntax-tree/.github/blob/main/contributing.md
 
-[support]: https://github.com/syntax-tree/.github/blob/HEAD/support.md
+[support]: https://github.com/syntax-tree/.github/blob/main/support.md
 
-[coc]: https://github.com/syntax-tree/.github/blob/HEAD/code-of-conduct.md
+[coc]: https://github.com/syntax-tree/.github/blob/main/code-of-conduct.md
 
 [awesome]: https://github.com/syntax-tree/awesome-syntax-tree
-
-[ideas]: https://github.com/syntax-tree/ideas
 
 [logo]: https://raw.githubusercontent.com/syntax-tree/unist/367da2e/logo.svg?sanitize=true
 
@@ -648,13 +645,13 @@ for contributing to unist and related projects!
 
 [list-of-utilities]: #list-of-utilities
 
-[webidl]: https://heycam.github.io/webidl/
+[webidl]: https://webidl.spec.whatwg.org
 
-[json]: https://tools.ietf.org/html/rfc7159
+[json]: https://datatracker.ietf.org/doc/html/rfc7159
 
 [xml]: https://www.w3.org/TR/xml/
 
-[javascript]: https://www.ecma-international.org/ecma-262/9.0/index.html
+[javascript]: https://262.ecma-international.org/9.0/
 
 [hast]: https://github.com/syntax-tree/hast
 

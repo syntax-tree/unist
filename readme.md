@@ -11,7 +11,7 @@ It’s implemented by several other specifications.
 
 This document may not be released.
 See [releases][] for released documents.
-The latest released version is [`2.0.0`][release].
+The latest released version is [`3.0.0`][release].
 
 ## Contents
 
@@ -599,7 +599,7 @@ for contributing to unist and related projects!
 
 [author]: https://wooorm.com
 
-[release]: https://github.com/syntax-tree/unist/releases/tag/2.0.0
+[release]: https://github.com/syntax-tree/unist/releases/tag/3.0.0
 
 [abstract-vs-concrete-trees]: https://eli.thegreenplace.net/2009/02/16/abstract-vs-concrete-syntax-trees/
 

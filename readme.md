@@ -491,10 +491,6 @@ unist:
     — visit nodes after another node
 *   [`unist-builder`](https://github.com/syntax-tree/unist-builder)
     — helper for creating trees
-*   [`unist-builder-blueprint`](https://github.com/syntax-tree/unist-builder-blueprint)
-    — convert trees to `unist-builder` notation
-*   [`unist-builder-blueprint-cli`](https://github.com/syntax-tree/unist-builder-blueprint-cli)
-    — CLI to convert trees to `unist-builder` notation
 
 ## References
 

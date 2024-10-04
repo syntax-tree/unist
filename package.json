@@ -1,28 +1,28 @@
 {
-  "private": true,
-  "version": "0.0.0",
-  "description": "universal syntax tree",
-  "license": "CC-BY-4.0",
-  "keywords": [],
-  "repository": "syntax-tree/unist",
-  "bugs": "https://github.com/syntax-tree/unist/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (wooorm.com)",
+  "bugs": "https://github.com/syntax-tree/unist/issues",
   "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (wooorm.com)",
+    "Christian Murphy <christian.murphy.42@gmail.com>",
     "Eugene Sharygin <eush77@gmail.com>",
-    "Christian Murphy <christian.murphy.42@gmail.com>"
+    "Titus Wormer <tituswormer@gmail.com> (wooorm.com)"
   ],
   "devDependencies": {
     "remark-cli": "^12.0.0",
     "remark-preset-wooorm": "^10.0.0"
   },
-  "scripts": {
-    "format": "remark --frail --output --quiet -- .",
-    "test": "npm run format"
-  },
+  "description": "universal syntax tree",
+  "keywords": [],
+  "license": "CC-BY-4.0",
+  "private": true,
   "remarkConfig": {
     "plugins": [
       "remark-preset-wooorm"
     ]
-  }
+  },
+  "repository": "syntax-tree/unist",
+  "scripts": {
+    "format": "remark --frail --output --quiet -- .",
+    "test": "npm run format"
+  },
+  "version": "0.0.0"
 }

@@ -15,22 +15,22 @@ The latest released version is [`3.0.0`][release].
 
 ## Contents
 
-*   [Intro](#intro)
-    *   [Syntax tree](#syntax-tree)
-    *   [Where this specification fits](#where-this-specification-fits)
-*   [Types](#types)
-*   [Nodes](#nodes)
-    *   [`Node`](#node)
-    *   [`Parent`](#parent)
-    *   [`Literal`](#literal)
-*   [Glossary](#glossary)
-*   [Tree traversal](#tree-traversal)
-*   [Utilities](#utilities)
-    *   [List of utilities](#list-of-utilities)
-*   [References](#references)
-*   [Contribute](#contribute)
-*   [Acknowledgments](#acknowledgments)
-*   [License](#license)
+* [Intro](#intro)
+  * [Syntax tree](#syntax-tree)
+  * [Where this specification fits](#where-this-specification-fits)
+* [Types](#types)
+* [Nodes](#nodes)
+  * [`Node`](#node)
+  * [`Parent`](#parent)
+  * [`Literal`](#literal)
+* [Glossary](#glossary)
+* [Tree traversal](#tree-traversal)
+* [Utilities](#utilities)
+  * [List of utilities](#list-of-utilities)
+* [References](#references)
+* [Contribute](#contribute)
+* [Acknowledgments](#acknowledgments)
+* [License](#license)
 
 ## Intro
 
@@ -46,11 +46,11 @@ generate code.
 
 Syntax trees [come in two flavors][abstract-vs-concrete-trees]:
 
-*   **concrete syntax trees**: structures that represent every detail (such as
-    white-space in white-space insensitive languages)
-*   **abstract syntax trees**: structures that only represent details relating
-    to the syntactic structure of code (such as ignoring whether a double or
-    single quote was used in languages that support both, such as JavaScript).
+* **concrete syntax trees**: structures that represent every detail (such as
+  white-space in white-space insensitive languages)
+* **abstract syntax trees**: structures that only represent details relating
+  to the syntactic structure of code (such as ignoring whether a double or
+  single quote was used in languages that support both, such as JavaScript).
 
 This specification can express both abstract and concrete syntax trees.
 
@@ -316,20 +316,20 @@ For example, see projects such as **[vfile][]**.
 In **preorder** (**NLR**) is [depth-first][traversal-depth] [tree
 traversal][traversal] that performs the following steps for each node *N*:
 
-1.  **N**: visit *N* itself
-2.  **L**: traverse *[head][term-head]* (then its *next sibling*, recursively
-    moving forward until reaching *tail*)
-3.  **R**: traverse *[tail][term-tail]*
+1. **N**: visit *N* itself
+2. **L**: traverse *[head][term-head]* (then its *next sibling*, recursively
+   moving forward until reaching *tail*)
+3. **R**: traverse *[tail][term-tail]*
 
 ###### Postorder
 
 In **postorder** (**LRN**) is [depth-first][traversal-depth] [tree
 traversal][traversal] that performs the following steps for each node *N*:
 
-1.  **L**: traverse *[head][term-head]* (then its *next sibling*, recursively
-    moving forward until reaching *tail*)
-2.  **R**: traverse *[tail][term-tail]*
-3.  **N**: visit *N* itself
+1. **L**: traverse *[head][term-head]* (then its *next sibling*, recursively
+   moving forward until reaching *tail*)
+2. **R**: traverse *[tail][term-tail]*
+3. **N**: visit *N* itself
 
 ###### Enter
 
@@ -387,9 +387,9 @@ For a given node *N* with *[children][term-child]*, a **depth-first traversal**
 performs three steps, simplified to only binary trees (every node has
 *[head][term-head]* and *[tail][term-tail]*, but no other children):
 
-*   **N**: visit *N* itself
-*   **L**: traverse *[head][term-head]*
-*   **R**: traverse *[tail][term-tail]*
+* **N**: visit *N* itself
+* **L**: traverse *[head][term-head]*
+* **R**: traverse *[tail][term-tail]*
 
 These steps can be done in any order, but for non-binary trees, **L** and **R**
 occur together.
@@ -420,95 +420,95 @@ sibling (**F**) is traversed and then finally its only child (**G**).
 There are several projects that deal with nodes from specifications implementing
 unist:
 
-*   [hast utilities](https://github.com/syntax-tree/hast#list-of-utilities)
-*   [mdast utilities](https://github.com/syntax-tree/mdast#list-of-utilities)
-*   [nlcst utilities](https://github.com/syntax-tree/nlcst#list-of-utilities)
-*   [xast utilities](https://github.com/syntax-tree/xast#list-of-utilities)
+* [hast utilities](https://github.com/syntax-tree/hast#list-of-utilities)
+* [mdast utilities](https://github.com/syntax-tree/mdast#list-of-utilities)
+* [nlcst utilities](https://github.com/syntax-tree/nlcst#list-of-utilities)
+* [xast utilities](https://github.com/syntax-tree/xast#list-of-utilities)
 
 ### List of utilities
 
-*   [`unist-util-ancestor`](https://github.com/gorango/unist-util-ancestor)
-    — get the common ancestor of one or more nodes
-*   [`unist-util-assert`](https://github.com/syntax-tree/unist-util-assert)
-    — assert nodes
-*   [`unist-util-filter`](https://github.com/syntax-tree/unist-util-filter)
-    — create a new tree with all nodes that pass the given function
-*   [`unist-util-find`](https://github.com/blahah/unist-util-find)
-    — find a node by condition
-*   [`unist-util-find-after`](https://github.com/syntax-tree/unist-util-find-after)
-    — find a node after another node
-*   [`unist-util-find-all-after`](https://github.com/syntax-tree/unist-util-find-all-after)
-    — find nodes after another node or index
-*   [`unist-util-find-all-before`](https://github.com/syntax-tree/unist-util-find-all-before)
-    — find nodes before another node or index
-*   [`unist-util-find-all-between`](https://github.com/mrzmmr/unist-util-find-all-between)
-    — find nodes between two nodes or positions
-*   [`unist-util-find-before`](https://github.com/syntax-tree/unist-util-find-before)
-    — find a node before another node
-*   [`unist-util-flat-filter`](https://github.com/unicorn-utterances/unist-util-flat-filter)
-    — flat map version of `unist-util-filter`
-*   [`unist-util-flatmap`](https://gitlab.com/staltz/unist-util-flatmap)
-    — create a new tree by expanding a node into many
-*   [`unist-util-generated`](https://github.com/syntax-tree/unist-util-generated)
-    — check if a node is generated
-*   [`unist-util-index`](https://github.com/syntax-tree/unist-util-index)
-    — index nodes by property or computed key
-*   [`unist-util-inspect`](https://github.com/syntax-tree/unist-util-inspect)
-    — node inspector
-*   [`unist-util-is`](https://github.com/syntax-tree/unist-util-is)
-    — check if a node passes a test
-*   [`unist-util-map`](https://github.com/syntax-tree/unist-util-map)
-    — create a new tree by mapping nodes
-*   [`unist-util-modify-children`](https://github.com/syntax-tree/unist-util-modify-children)
-    — modify direct children of a parent
-*   [`unist-util-parents`](https://github.com/syntax-tree/unist-util-parents)
-    — `parent` references on nodes
-*   [`unist-util-position`](https://github.com/syntax-tree/unist-util-position)
-    — get positional info of nodes
-*   [`unist-util-reduce`](https://github.com/GenerousLabs/unist-util-reduce)
-    — recursively reduce a tree
-*   [`unist-util-remove`](https://github.com/syntax-tree/unist-util-remove)
-    — remove nodes from trees
-*   [`unist-util-remove-position`](https://github.com/syntax-tree/unist-util-remove-position)
-    — remove positional info from trees
-*   [`unist-util-replace-all-between`](https://github.com/unicorn-utterances/unist-util-replace-all-between)
-    — replace nodes between two nodes or positions
-*   [`unist-util-select`](https://github.com/syntax-tree/unist-util-select)
-    — select nodes with CSS-like selectors
-*   [`unist-util-size`](https://github.com/syntax-tree/unist-util-size)
-    — calculate the number of nodes in a tree
-*   [`unist-util-source`](https://github.com/syntax-tree/unist-util-source)
-    — get the source of a value (node or position) in a file
-*   [`unist-util-stringify-position`](https://github.com/syntax-tree/unist-util-stringify-position)
-    — stringify a node, position, or point
-*   [`unist-util-visit`](https://github.com/syntax-tree/unist-util-visit)
-    — recursively walk over nodes
-*   [`unist-util-visit-parents`](https://github.com/syntax-tree/unist-util-visit-parents)
-    — recursively walk over nodes, with a stack of parents
-*   [`unist-util-visit-children`](https://github.com/syntax-tree/unist-util-visit-children)
-    — visit direct children of a parent
-*   [`unist-util-visit-all-after`](https://github.com/mrzmmr/unist-util-visit-all-after)
-    — visit nodes after another node
-*   [`unist-builder`](https://github.com/syntax-tree/unist-builder)
-    — helper for creating trees
+* [`unist-util-ancestor`](https://github.com/gorango/unist-util-ancestor)
+  — get the common ancestor of one or more nodes
+* [`unist-util-assert`](https://github.com/syntax-tree/unist-util-assert)
+  — assert nodes
+* [`unist-util-filter`](https://github.com/syntax-tree/unist-util-filter)
+  — create a new tree with all nodes that pass the given function
+* [`unist-util-find`](https://github.com/blahah/unist-util-find)
+  — find a node by condition
+* [`unist-util-find-after`](https://github.com/syntax-tree/unist-util-find-after)
+  — find a node after another node
+* [`unist-util-find-all-after`](https://github.com/syntax-tree/unist-util-find-all-after)
+  — find nodes after another node or index
+* [`unist-util-find-all-before`](https://github.com/syntax-tree/unist-util-find-all-before)
+  — find nodes before another node or index
+* [`unist-util-find-all-between`](https://github.com/mrzmmr/unist-util-find-all-between)
+  — find nodes between two nodes or positions
+* [`unist-util-find-before`](https://github.com/syntax-tree/unist-util-find-before)
+  — find a node before another node
+* [`unist-util-flat-filter`](https://github.com/unicorn-utterances/unist-util-flat-filter)
+  — flat map version of `unist-util-filter`
+* [`unist-util-flatmap`](https://gitlab.com/staltz/unist-util-flatmap)
+  — create a new tree by expanding a node into many
+* [`unist-util-generated`](https://github.com/syntax-tree/unist-util-generated)
+  — check if a node is generated
+* [`unist-util-index`](https://github.com/syntax-tree/unist-util-index)
+  — index nodes by property or computed key
+* [`unist-util-inspect`](https://github.com/syntax-tree/unist-util-inspect)
+  — node inspector
+* [`unist-util-is`](https://github.com/syntax-tree/unist-util-is)
+  — check if a node passes a test
+* [`unist-util-map`](https://github.com/syntax-tree/unist-util-map)
+  — create a new tree by mapping nodes
+* [`unist-util-modify-children`](https://github.com/syntax-tree/unist-util-modify-children)
+  — modify direct children of a parent
+* [`unist-util-parents`](https://github.com/syntax-tree/unist-util-parents)
+  — `parent` references on nodes
+* [`unist-util-position`](https://github.com/syntax-tree/unist-util-position)
+  — get positional info of nodes
+* [`unist-util-reduce`](https://github.com/GenerousLabs/unist-util-reduce)
+  — recursively reduce a tree
+* [`unist-util-remove`](https://github.com/syntax-tree/unist-util-remove)
+  — remove nodes from trees
+* [`unist-util-remove-position`](https://github.com/syntax-tree/unist-util-remove-position)
+  — remove positional info from trees
+* [`unist-util-replace-all-between`](https://github.com/unicorn-utterances/unist-util-replace-all-between)
+  — replace nodes between two nodes or positions
+* [`unist-util-select`](https://github.com/syntax-tree/unist-util-select)
+  — select nodes with CSS-like selectors
+* [`unist-util-size`](https://github.com/syntax-tree/unist-util-size)
+  — calculate the number of nodes in a tree
+* [`unist-util-source`](https://github.com/syntax-tree/unist-util-source)
+  — get the source of a value (node or position) in a file
+* [`unist-util-stringify-position`](https://github.com/syntax-tree/unist-util-stringify-position)
+  — stringify a node, position, or point
+* [`unist-util-visit`](https://github.com/syntax-tree/unist-util-visit)
+  — recursively walk over nodes
+* [`unist-util-visit-parents`](https://github.com/syntax-tree/unist-util-visit-parents)
+  — recursively walk over nodes, with a stack of parents
+* [`unist-util-visit-children`](https://github.com/syntax-tree/unist-util-visit-children)
+  — visit direct children of a parent
+* [`unist-util-visit-all-after`](https://github.com/mrzmmr/unist-util-visit-all-after)
+  — visit nodes after another node
+* [`unist-builder`](https://github.com/syntax-tree/unist-builder)
+  — helper for creating trees
 
 ## References
 
-*   **JavaScript**:
-    [ECMAScript Language Specification][javascript].
-    Ecma International.
-*   **JSON**:
-    [The JavaScript Object Notation (JSON) Data Interchange Format][json],
-    T. Bray.
-    IETF.
-*   **XML**:
-    [Extensible Markup Language][xml],
-    T. Bray, J. Paoli, C. Sperberg-McQueen, E. Maler, F. Yergeau.
-    W3C.
-*   **Web IDL**:
-    [Web IDL][webidl],
-    C. McCormack.
-    W3C.
+* **JavaScript**:
+  [ECMAScript Language Specification][javascript].
+  Ecma International.
+* **JSON**:
+  [The JavaScript Object Notation (JSON) Data Interchange Format][json],
+  T. Bray.
+  IETF.
+* **XML**:
+  [Extensible Markup Language][xml],
+  T. Bray, J. Paoli, C. Sperberg-McQueen, E. Maler, F. Yergeau.
+  W3C.
+* **Web IDL**:
+  [Web IDL][webidl],
+  C. McCormack.
+  W3C.
 
 ## Contribute
 

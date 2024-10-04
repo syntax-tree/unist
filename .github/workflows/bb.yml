@@ -1,9 +1,9 @@
 name: bb
 on:
   issues:
-    types: [opened, reopened, edited, closed, labeled, unlabeled]
+    types: [closed, edited, labeled, opened, reopened, unlabeled]
   pull_request_target:
-    types: [opened, reopened, edited, closed, labeled, unlabeled]
+    types: [closed, edited, labeled, opened, reopened, unlabeled]
 jobs:
   main:
     runs-on: ubuntu-latest

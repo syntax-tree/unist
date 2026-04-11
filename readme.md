@@ -431,6 +431,8 @@ unist:
   — get the common ancestor of one or more nodes
 * [`unist-util-assert`](https://github.com/syntax-tree/unist-util-assert)
   — assert nodes
+* [`unist-util-distance`](https://github.com/gorango/unist-util-distance)
+  — finding the distance between two nodes
 * [`unist-util-filter`](https://github.com/syntax-tree/unist-util-filter)
   — create a new tree with all nodes that pass the given function
 * [`unist-util-find`](https://github.com/blahah/unist-util-find)

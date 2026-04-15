@@ -27,6 +27,8 @@ The latest released version is [`3.0.0`][release].
 * [Tree traversal](#tree-traversal)
 * [Utilities](#utilities)
   * [List of utilities](#list-of-utilities)
+* [Plugins](#plugins)
+  * [List of plugins](#list-of-plugins)
 * [References](#references)
 * [Contribute](#contribute)
 * [Acknowledgments](#acknowledgments)
@@ -491,6 +493,20 @@ unist:
   — visit nodes after another node
 * [`unist-builder`](https://github.com/syntax-tree/unist-builder)
   — helper for creating trees
+  
+## Plugins
+
+**Plugins** are functions that configure a processor to transform, inspect, or
+modify syntax trees.
+
+**unist plugins** are cross-compatible, which can be used across **remark**,
+**rehype**, and **recma** pipelines because they operate on the underlying
+universal syntax tree specifications.
+
+### List of plugins
+
+* [`unist-plugin-log-tree`](https://github.com/ipikuka/unist-plugin-log-tree)
+  — logs unist syntax trees without mutating for debugging
 
 ## References
 

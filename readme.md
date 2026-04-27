@@ -445,6 +445,8 @@ unist:
   — find nodes between two nodes or positions
 * [`unist-util-find-before`](https://github.com/syntax-tree/unist-util-find-before)
   — find a node before another node
+* [`unist-util-find-between`](https://github.com/ipikuka/unist-util-find-between)
+  — find nodes between two nodes or index
 * [`unist-util-flat-filter`](https://github.com/unicorn-utterances/unist-util-flat-filter)
   — flat map version of `unist-util-filter`
 * [`unist-util-flatmap`](https://gitlab.com/staltz/unist-util-flatmap)
